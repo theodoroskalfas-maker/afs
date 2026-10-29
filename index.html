@@ -32,7 +32,6 @@
   --radius: 12px;
   --radius-sm: 8px;
   --radius-xs: 6px;
-  /* Tier colors for architecture */
   --tier-user: #2563eb;
   --tier-user-bg: #eff5ff;
   --tier-logic: #7c3aed;
@@ -101,94 +100,24 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ===== SIDEBAR NAV ===== */
 .sidebar {
-  position: fixed;
-  top: 0; left: 0;
-  width: 280px;
-  height: 100vh;
-  background: var(--surface);
-  border-right: 1px solid var(--border);
-  overflow-y: auto;
-  z-index: 100;
-  padding: 1.5rem 0;
-  transition: transform 0.3s ease;
+  position: fixed; top: 0; left: 0; width: 280px; height: 100vh;
+  background: var(--surface); border-right: 1px solid var(--border);
+  overflow-y: auto; z-index: 100; padding: 1.5rem 0; transition: transform 0.3s ease;
 }
-.sidebar-brand {
-  padding: 0 1.25rem 1.25rem;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 1rem;
-}
-.sidebar-brand h2 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: -0.01em;
-}
-.sidebar-brand p {
-  font-size: 0.72rem;
-  color: var(--fg-muted);
-  margin-top: 0.25rem;
-}
-.sidebar-section {
-  padding: 0 0.75rem;
-  margin-bottom: 0.5rem;
-}
-.sidebar-section-title {
-  font-size: 0.65rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--fg-muted);
-  padding: 0 0.5rem;
-  margin-bottom: 0.35rem;
-}
-.sidebar a {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 0.75rem;
-  font-size: 0.78rem;
-  color: var(--fg-secondary);
-  text-decoration: none;
-  border-radius: var(--radius-xs);
-  transition: all 0.15s ease;
-  line-height: 1.35;
-}
+.sidebar-brand { padding: 0 1.25rem 1.25rem; border-bottom: 1px solid var(--border); margin-bottom: 1rem; }
+.sidebar-brand h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--accent); letter-spacing: -0.01em; }
+.sidebar-brand p { font-size: 0.72rem; color: var(--fg-muted); margin-top: 0.25rem; }
+.sidebar-section { padding: 0 0.75rem; margin-bottom: 0.5rem; }
+.sidebar-section-title { font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--fg-muted); padding: 0 0.5rem; margin-bottom: 0.35rem; }
+.sidebar a { display: flex; align-items: center; gap: 0.5rem; padding: 0.45rem 0.75rem; font-size: 0.78rem; color: var(--fg-secondary); text-decoration: none; border-radius: var(--radius-xs); transition: all 0.15s ease; line-height: 1.35; }
 .sidebar a:hover { background: var(--accent-light); color: var(--accent); }
 .sidebar a.active { background: var(--accent-light); color: var(--accent); font-weight: 600; }
-.sidebar a .nav-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
-  font-weight: 500;
-  color: var(--fg-muted);
-  min-width: 1.5rem;
-}
+.sidebar a .nav-num { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 500; color: var(--fg-muted); min-width: 1.5rem; }
 
-/* Mobile menu toggle */
-.menu-toggle {
-  display: none;
-  position: fixed;
-  top: 1rem; left: 1rem;
-  z-index: 200;
-  width: 40px; height: 40px;
-  border-radius: var(--radius-sm);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-}
+.menu-toggle { display: none; position: fixed; top: 1rem; left: 1rem; z-index: 200; width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow); cursor: pointer; align-items: center; justify-content: center; }
 .menu-toggle svg { width: 20px; height: 20px; stroke: var(--fg); }
-.sidebar-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: 99;
-}
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 99; }
 
 @media (max-width: 900px) {
   .sidebar { transform: translateX(-100%); }
@@ -198,73 +127,17 @@ body {
   .main { margin-left: 0 !important; }
 }
 
-/* ===== MAIN CONTENT ===== */
-.main {
-  margin-left: 280px;
-  min-height: 100vh;
-}
-.hero {
-  background: linear-gradient(135deg, var(--accent) 0%, #1a2870 100%);
-  color: #fff;
-  padding: 4rem 3rem 3.5rem;
-  position: relative;
-  overflow: hidden;
-}
-.hero::after {
-  content: '';
-  position: absolute;
-  top: -50%; right: -20%;
-  width: 60%; height: 200%;
-  background: radial-gradient(ellipse, rgba(255,255,255,0.06) 0%, transparent 70%);
-  pointer-events: none;
-}
+.main { margin-left: 280px; min-height: 100vh; }
+.hero { background: linear-gradient(135deg, var(--accent) 0%, #1a2870 100%); color: #fff; padding: 4rem 3rem 3.5rem; position: relative; overflow: hidden; }
+.hero::after { content: ''; position: absolute; top: -50%; right: -20%; width: 60%; height: 200%; background: radial-gradient(ellipse, rgba(255,255,255,0.06) 0%, transparent 70%); pointer-events: none; }
 .hero-content { position: relative; max-width: 800px; }
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 100px;
-  padding: 0.3rem 0.85rem;
-  margin-bottom: 1.25rem;
-  backdrop-filter: blur(8px);
-}
-.hero h1 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 2.25rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-  margin-bottom: 0.75rem;
-  text-wrap: balance;
-}
-.hero-sub {
-  font-size: 1rem;
-  opacity: 0.85;
-  line-height: 1.55;
-  max-width: 640px;
-}
-.hero-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-top: 1.75rem;
-  font-size: 0.78rem;
-  opacity: 0.8;
-}
+.hero-badge { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; padding: 0.3rem 0.85rem; margin-bottom: 1.25rem; backdrop-filter: blur(8px); }
+.hero h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.25rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.75rem; text-wrap: balance; }
+.hero-sub { font-size: 1rem; opacity: 0.85; line-height: 1.55; max-width: 640px; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.75rem; font-size: 0.78rem; opacity: 0.8; }
 .hero-meta-item { display: flex; align-items: center; gap: 0.4rem; }
 .hero-meta-item svg { width: 16px; height: 16px; opacity: 0.7; }
-
-.content-area {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 2.5rem 3rem 4rem;
-}
+.content-area { max-width: 860px; margin: 0 auto; padding: 2.5rem 3rem 4rem; }
 
 @media (max-width: 900px) {
   .hero { padding: 3rem 1.25rem 2.5rem; }
@@ -272,272 +145,71 @@ body {
   .content-area { padding: 1.5rem 1rem 3rem; }
 }
 
-/* ===== SECTIONS ===== */
 section { margin-bottom: 3rem; scroll-margin-top: 2rem; }
-section > h2 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.35rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--fg);
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--accent);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-section > h2 .section-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--accent);
-  background: var(--accent-light);
-  padding: 0.2em 0.55em;
-  border-radius: var(--radius-xs);
-}
-.section-intro {
-  color: var(--fg-secondary);
-  margin-bottom: 1.5rem;
-  font-size: 0.92rem;
-  line-height: 1.7;
-}
+section > h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; color: var(--fg); margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); display: flex; align-items: center; gap: 0.5rem; }
+section > h2 .section-num { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 600; color: var(--accent); background: var(--accent-light); padding: 0.2em 0.55em; border-radius: var(--radius-xs); }
+.section-intro { color: var(--fg-secondary); margin-bottom: 1.5rem; font-size: 0.92rem; line-height: 1.7; }
 
-/* ===== SUMMARY TABLE ===== */
-.summary-table-wrap {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  margin: 1.5rem 0;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.82rem;
-}
-thead {
-  background: var(--accent);
-  color: #fff;
-}
-thead th {
-  padding: 0.7rem 0.85rem;
-  font-weight: 600;
-  text-align: left;
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  white-space: nowrap;
-}
-tbody tr {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border-subtle);
-}
+.summary-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.5rem 0; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow); }
+table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+thead { background: var(--accent); color: #fff; }
+thead th { padding: 0.7rem 0.85rem; font-weight: 600; text-align: left; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+tbody tr { background: var(--surface); border-bottom: 1px solid var(--border-subtle); }
 tbody tr:nth-child(even) { background: var(--bg); }
 tbody tr:hover { background: var(--accent-light); }
-td {
-  padding: 0.65rem 0.85rem;
-  vertical-align: top;
-}
+td { padding: 0.65rem 0.85rem; vertical-align: top; }
 td:first-child { font-weight: 600; color: var(--fg); }
 
-/* ===== REQUIREMENT TABLES ===== */
-.req-table-wrap {
-  overflow-x: auto;
-  margin: 1rem 0 1.5rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
-}
-.req-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.82rem;
-}
-.req-table thead {
-  background: var(--surface-raised);
-  color: var(--fg);
-}
-.req-table thead th {
-  text-transform: none;
-  letter-spacing: 0;
-  font-size: 0.78rem;
-  border-bottom: 2px solid var(--border);
-}
+.req-table-wrap { overflow-x: auto; margin: 1rem 0 1.5rem; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+.req-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.req-table thead { background: var(--surface-raised); color: var(--fg); }
+.req-table thead th { text-transform: none; letter-spacing: 0; font-size: 0.78rem; border-bottom: 2px solid var(--border); }
 .req-table td { line-height: 1.55; }
 .req-table td:first-child { white-space: normal; min-width: 140px; }
 
-/* ===== BADGES ===== */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  font-size: 0.68rem;
-  font-weight: 600;
-  padding: 0.2em 0.6em;
-  border-radius: 100px;
-  white-space: nowrap;
-}
+.badge { display: inline-flex; align-items: center; gap: 0.25rem; font-size: 0.68rem; font-weight: 600; padding: 0.2em 0.6em; border-radius: 100px; white-space: nowrap; }
 .badge-yes { background: var(--success-bg); color: var(--success); }
 .badge-partial { background: var(--warning-bg); color: var(--warning); }
 .badge-no { background: var(--danger-bg); color: var(--danger); }
 .badge-native { background: var(--accent-light); color: var(--accent); }
 
-/* ===== CALLOUT BOXES ===== */
-.callout {
-  border-radius: var(--radius);
-  padding: 1rem 1.25rem;
-  margin: 1.25rem 0;
-  font-size: 0.85rem;
-  line-height: 1.6;
-  border-left: 4px solid;
-}
+.callout { border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 0.85rem; line-height: 1.6; border-left: 4px solid; }
 .callout-info { background: var(--accent-light); border-color: var(--accent); }
 .callout-success { background: var(--success-bg); border-color: var(--success); }
 .callout-warning { background: var(--warning-bg); border-color: var(--warning); }
 .callout-danger { background: var(--danger-bg); border-color: var(--danger); }
 .callout strong { font-weight: 600; }
 
-/* ===== COMPARISON TABLE (Part 2) ===== */
-.comparison-wrap {
-  overflow-x: auto;
-  margin: 1.5rem 0;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-md);
-}
-.comparison-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.82rem;
-}
-.comparison-table thead th {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-}
+.comparison-wrap { overflow-x: auto; margin: 1.5rem 0; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow-md); }
+.comparison-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.comparison-table thead th { position: sticky; top: 0; z-index: 2; }
 .comparison-table th:first-child { min-width: 140px; }
-.comparison-table th.opt-a {
-  background: var(--success);
-  color: #fff;
-  min-width: 240px;
-}
-.comparison-table th.opt-b {
-  background: var(--fg-muted);
-  color: #fff;
-  min-width: 240px;
-}
-.comparison-table tbody td:nth-child(2) {
-  background: color-mix(in srgb, var(--success-bg) 40%, var(--surface));
-}
+.comparison-table th.opt-a { background: var(--success); color: #fff; min-width: 240px; }
+.comparison-table th.opt-b { background: var(--fg-muted); color: #fff; min-width: 240px; }
+.comparison-table tbody td:nth-child(2) { background: color-mix(in srgb, var(--success-bg) 40%, var(--surface)); }
 
-/* ===== TIMELINE ===== */
 .timeline { margin: 1.5rem 0; }
-.timeline-item {
-  display: flex;
-  gap: 1rem;
-  padding-bottom: 1.5rem;
-  position: relative;
-}
-.timeline-item:not(:last-child)::before {
-  content: '';
-  position: absolute;
-  left: 19px;
-  top: 40px;
-  bottom: 0;
-  width: 2px;
-  background: var(--border);
-}
-.timeline-dot {
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 0.75rem;
-  flex-shrink: 0;
-  box-shadow: var(--shadow);
-}
-.timeline-content {
-  flex: 1;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 0.85rem 1rem;
-}
-.timeline-content h4 {
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 0.15rem;
-}
-.timeline-content .duration {
-  font-size: 0.72rem;
-  color: var(--accent);
-  font-weight: 600;
-  margin-bottom: 0.35rem;
-}
-.timeline-content p {
-  font-size: 0.8rem;
-  color: var(--fg-secondary);
-  line-height: 1.5;
-}
+.timeline-item { display: flex; gap: 1rem; padding-bottom: 1.5rem; position: relative; }
+.timeline-item:not(:last-child)::before { content: ''; position: absolute; left: 19px; top: 40px; bottom: 0; width: 2px; background: var(--border); }
+.timeline-dot { width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.75rem; flex-shrink: 0; box-shadow: var(--shadow); }
+.timeline-content { flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.85rem 1rem; }
+.timeline-content h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.15rem; }
+.timeline-content .duration { font-size: 0.72rem; color: var(--accent); font-weight: 600; margin-bottom: 0.35rem; }
+.timeline-content p { font-size: 0.8rem; color: var(--fg-secondary); line-height: 1.5; }
 
-/* ===== ARCHITECTURE DIAGRAM ===== */
-.arch-section {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  margin: 1.5rem 0;
-  box-shadow: var(--shadow-md);
-}
-.arch-section h3 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-/* Tier styling reused from architecture artifact */
+.arch-section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin: 1.5rem 0; box-shadow: var(--shadow-md); }
+.arch-section h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 1rem; text-align: center; }
 .tier { margin-bottom: 0.75rem; }
 .tier-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; }
-.tier-badge {
-  font-size: 0.6rem; font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.08em; padding: 0.2em 0.55em; border-radius: 4px; white-space: nowrap;
-}
+.tier-badge { font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2em 0.55em; border-radius: 4px; white-space: nowrap; }
 .tier-label { font-size: 0.72rem; color: var(--fg-secondary); font-weight: 500; }
-.tier-body {
-  display: flex; flex-wrap: wrap; gap: 0.5rem;
-  padding: 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border);
-}
-.node {
-  flex: 1 1 160px; min-width: 130px; max-width: 240px;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius-xs); padding: 0.6rem; box-shadow: var(--shadow-sm);
-}
-.node-name {
-  font-size: 0.75rem; font-weight: 600; margin: 0 0 0.2rem;
-  display: flex; align-items: center; gap: 0.3rem;
-}
-.node-icon {
-  width: 16px; height: 16px; border-radius: 3px;
-  display: inline-flex; align-items: center; justify-content: center;
-  font-size: 0.55rem; flex-shrink: 0; color: #fff; font-weight: 700;
-}
+.tier-body { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0.85rem; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+.node { flex: 1 1 160px; min-width: 130px; max-width: 240px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xs); padding: 0.6rem; box-shadow: var(--shadow-sm); }
+.node-name { font-size: 0.75rem; font-weight: 600; margin: 0 0 0.2rem; display: flex; align-items: center; gap: 0.3rem; }
+.node-icon { width: 16px; height: 16px; border-radius: 3px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.55rem; flex-shrink: 0; color: #fff; font-weight: 700; }
 .node-desc { font-size: 0.65rem; color: var(--fg-secondary); margin: 0; line-height: 1.4; }
-.node-tag {
-  font-size: 0.55rem; font-family: 'JetBrains Mono', monospace; font-weight: 500;
-  padding: 0.1em 0.35em; border-radius: 3px; background: var(--border-subtle);
-  color: var(--fg-muted); display: inline-block; margin-top: 0.25rem;
-}
-.badge-existing-sm, .badge-new-sm {
-  font-size: 0.5rem; font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.06em; padding: 0.12em 0.35em; border-radius: 3px; margin-left: auto; flex-shrink: 0;
-}
+.node-tag { font-size: 0.55rem; font-family: 'JetBrains Mono', monospace; font-weight: 500; padding: 0.1em 0.35em; border-radius: 3px; background: var(--border-subtle); color: var(--fg-muted); display: inline-block; margin-top: 0.25rem; }
+.badge-existing-sm, .badge-new-sm { font-size: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.12em 0.35em; border-radius: 3px; margin-left: auto; flex-shrink: 0; }
 .badge-existing-sm { background: var(--success-bg); color: var(--success); }
 .badge-new-sm { background: var(--warning-bg); color: var(--warning); }
 
@@ -555,110 +227,37 @@ td:first-child { font-weight: 600; color: var(--fg); }
 .connectors { display: flex; justify-content: center; padding: 0.2rem 0; gap: 1.5rem; }
 .connector-arrow { display: flex; flex-direction: column; align-items: center; }
 .connector-arrow svg { width: 14px; height: 20px; }
-.connector-arrow .arrow-label {
-  font-size: 0.55rem; font-family: 'JetBrains Mono', monospace; color: var(--arrow); white-space: nowrap;
-}
+.connector-arrow .arrow-label { font-size: 0.55rem; font-family: 'JetBrains Mono', monospace; color: var(--arrow); white-space: nowrap; }
 
-/* ===== OPEN QUESTIONS ===== */
-.question-group {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  margin-bottom: 0.85rem;
-  overflow: hidden;
-}
-.question-group summary {
-  padding: 0.75rem 1rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  list-style: none;
-}
+.question-group { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 0.85rem; overflow: hidden; }
+.question-group summary { padding: 0.75rem 1rem; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; list-style: none; }
 .question-group summary::-webkit-details-marker { display: none; }
-.question-group summary::before {
-  content: '▸';
-  font-size: 0.7rem;
-  color: var(--fg-muted);
-  transition: transform 0.2s;
-}
+.question-group summary::before { content: '\25B8'; font-size: 0.7rem; color: var(--fg-muted); transition: transform 0.2s; }
 .question-group[open] summary::before { transform: rotate(90deg); }
 .question-group summary:hover { background: var(--accent-light); }
-.question-group .q-body {
-  padding: 0 1rem 1rem;
-  font-size: 0.82rem;
-  color: var(--fg-secondary);
-  line-height: 1.6;
-}
-.blocking-tag {
-  font-size: 0.6rem; font-weight: 700; text-transform: uppercase;
-  background: var(--danger-bg); color: var(--danger);
-  padding: 0.15em 0.5em; border-radius: 3px; letter-spacing: 0.05em;
-}
+.question-group .q-body { padding: 0 1rem 1rem; font-size: 0.82rem; color: var(--fg-secondary); line-height: 1.6; }
+.blocking-tag { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; background: var(--danger-bg); color: var(--danger); padding: 0.15em 0.5em; border-radius: 3px; letter-spacing: 0.05em; }
 
-/* ===== NEXT STEPS ===== */
-.next-steps {
-  counter-reset: step;
-  padding-left: 0;
-  list-style: none;
-}
-.next-steps li {
-  counter-increment: step;
-  display: flex;
-  gap: 0.75rem;
-  margin-bottom: 0.85rem;
-  align-items: flex-start;
-}
-.next-steps li::before {
-  content: counter(step);
-  min-width: 28px; height: 28px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.72rem;
-  font-weight: 700;
-  flex-shrink: 0;
-  margin-top: 0.1rem;
-}
+.next-steps { counter-reset: step; padding-left: 0; list-style: none; }
+.next-steps li { counter-increment: step; display: flex; gap: 0.75rem; margin-bottom: 0.85rem; align-items: flex-start; }
+.next-steps li::before { content: counter(step); min-width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 700; flex-shrink: 0; margin-top: 0.1rem; }
 
-/* ===== FOOTER ===== */
-.page-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  border-top: 1px solid var(--border);
-  font-size: 0.75rem;
-  color: var(--fg-muted);
-}
+.page-footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid var(--border); font-size: 0.75rem; color: var(--fg-muted); }
 
-/* ===== PDF BUTTON ===== */
-.pdf-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1.75rem;
-  padding: 0.6rem 1.25rem;
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.3);
-  border-radius: var(--radius-sm);
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 600;
-  cursor: pointer;
-  backdrop-filter: blur(8px);
-  transition: all 0.2s ease;
-}
+.pdf-btn { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.75rem; padding: 0.6rem 1.25rem; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: var(--radius-sm); color: #fff; font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 600; cursor: pointer; backdrop-filter: blur(8px); transition: all 0.2s ease; }
 .pdf-btn:hover { background: rgba(255,255,255,0.25); }
 .pdf-btn svg { width: 16px; height: 16px; }
 
-/* ===== PRINT ===== */
+/* Language toggle */
+body[data-lang="en"] .el { display: none !important; }
+body[data-lang="el"] .en { display: none !important; }
+.lang-toggle { display: inline-flex; align-items: center; gap: 0; margin-top: 1.75rem; margin-left: 0.75rem; border: 1px solid rgba(255,255,255,0.3); border-radius: var(--radius-sm); overflow: hidden; backdrop-filter: blur(8px); vertical-align: middle; }
+.lang-btn { padding: 0.5rem 0.85rem; font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 600; cursor: pointer; border: none; background: transparent; color: rgba(255,255,255,0.6); transition: all 0.2s ease; }
+.lang-btn.active { background: rgba(255,255,255,0.2); color: #fff; }
+.lang-btn:hover:not(.active) { background: rgba(255,255,255,0.1); }
+
 @media print {
-  .sidebar, .menu-toggle, .sidebar-overlay, .pdf-btn { display: none !important; }
+  .sidebar, .menu-toggle, .sidebar-overlay, .pdf-btn, .lang-toggle { display: none !important; }
   .main { margin-left: 0 !important; }
   .hero { padding: 2rem; }
   .content-area { padding: 1rem; }
@@ -666,693 +265,380 @@ td:first-child { font-weight: 600; color: var(--fg); }
 }
 </style>
 </head>
-<body>
+<body data-lang="en">
 
-<!-- Mobile menu toggle -->
 <button class="menu-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open'); document.querySelector('.sidebar-overlay').classList.toggle('open');" aria-label="Menu">
   <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
 </button>
 <div class="sidebar-overlay" onclick="document.querySelector('.sidebar').classList.remove('open'); this.classList.remove('open');"></div>
 
-<!-- Sidebar navigation -->
 <nav class="sidebar">
   <div class="sidebar-brand">
     <h2>AFS Technologies</h2>
-    <p>Zoho Accounting Implementation Response</p>
+    <p><span class="en">Zoho Accounting Implementation Response</span><span class="el">Απόκριση Υλοποίησης Λογιστικής Zoho</span></p>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-section-title">Part 1 — Implementation</div>
-    <a href="#summary"><span class="nav-num">01</span> Summary Table</a>
-    <a href="#core-accounting"><span class="nav-num">02</span> Core Accounting</a>
-    <a href="#greek-localization"><span class="nav-num">03</span> Greek Localization</a>
-    <a href="#mydata"><span class="nav-num">04</span> myDATA Integration</a>
-    <a href="#einvoicing"><span class="nav-num">05</span> Electronic Invoicing</a>
-    <a href="#reporting"><span class="nav-num">06</span> Reporting</a>
-    <a href="#multi-company"><span class="nav-num">07</span> Multi Company</a>
-    <a href="#automation"><span class="nav-num">08</span> Automation</a>
-    <a href="#greek-layer"><span class="nav-num">09</span> Greek Accounting Layer</a>
-    <a href="#architecture"><span class="nav-num"></span> Architecture Diagram</a>
-    <a href="#open-questions"><span class="nav-num">10</span> Open Questions</a>
-    <a href="#investment"><span class="nav-num">💰</span> Investment</a>
+    <div class="sidebar-section-title"><span class="en">Part 1 — Implementation</span><span class="el">Μέρος 1 — Υλοποίηση</span></div>
+    <a href="#summary"><span class="nav-num">01</span> <span class="en">Summary Table</span><span class="el">Συνοπτικός Πίνακας</span></a>
+    <a href="#core-accounting"><span class="nav-num">02</span> <span class="en">Core Accounting</span><span class="el">Βασική Λογιστική</span></a>
+    <a href="#greek-localization"><span class="nav-num">03</span> <span class="en">Greek Localization</span><span class="el">Ελληνική Προσαρμογή</span></a>
+    <a href="#mydata"><span class="nav-num">04</span> <span class="en">myDATA Integration</span><span class="el">Ενσωμάτωση myDATA</span></a>
+    <a href="#einvoicing"><span class="nav-num">05</span> <span class="en">Electronic Invoicing</span><span class="el">Ηλεκτρονική Τιμολόγηση</span></a>
+    <a href="#reporting"><span class="nav-num">06</span> <span class="en">Reporting</span><span class="el">Αναφορές</span></a>
+    <a href="#multi-company"><span class="nav-num">07</span> <span class="en">Multi Company</span><span class="el">Πολυεταιρική Διαχείριση</span></a>
+    <a href="#automation"><span class="nav-num">08</span> <span class="en">Automation</span><span class="el">Αυτοματισμοί</span></a>
+    <a href="#greek-layer"><span class="nav-num">09</span> <span class="en">Greek Accounting Layer</span><span class="el">Ελληνικό Λογιστικό Επίπεδο</span></a>
+    <a href="#architecture"><span class="nav-num"></span> <span class="en">Architecture Diagram</span><span class="el">Διάγραμμα Αρχιτεκτονικής</span></a>
+    <a href="#open-questions"><span class="nav-num">10</span> <span class="en">Open Questions</span><span class="el">Ανοικτά Ερωτήματα</span></a>
+    <a href="#investment"><span class="nav-num">💰</span> <span class="en">Investment</span><span class="el">Επένδυση</span></a>
   </div>
   <div class="sidebar-section">
-    <div class="sidebar-section-title">Part 2 — Analysis</div>
-    <a href="#comparison"><span class="nav-num">11</span> Books vs Custom App</a>
-    <a href="#recommendation"><span class="nav-num">12</span> Recommendation</a>
+    <div class="sidebar-section-title"><span class="en">Part 2 — Analysis</span><span class="el">Μέρος 2 — Ανάλυση</span></div>
+    <a href="#comparison"><span class="nav-num">11</span> <span class="en">Books vs Custom App</span><span class="el">Books vs Προσαρμοσμένη Εφαρμογή</span></a>
+    <a href="#recommendation"><span class="nav-num">12</span> <span class="en">Recommendation</span><span class="el">Σύσταση</span></a>
   </div>
 </nav>
 
 <div class="main">
 
-<!-- Hero -->
 <header class="hero">
   <div class="hero-content">
     <div class="hero-badge">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-      Implementation Response
+      <span class="en">Implementation Response</span><span class="el">Απόκριση Υλοποίησης</span>
     </div>
-    <h1>Zoho Accounting Platform — Greek Compliance</h1>
-    <p class="hero-sub">Technical feasibility assessment in response to the AFS Technologies scope document dated 22&nbsp;October&nbsp;2026. Zoho operates as the single accounting environment — no Pylon or other external ERP.</p>
+    <h1><span class="en">Zoho Accounting Platform — Greek Compliance</span><span class="el">Πλατφόρμα Λογιστικής Zoho — Ελληνική Συμμόρφωση</span></h1>
+    <p class="hero-sub"><span class="en">Technical feasibility assessment in response to the AFS Technologies scope document dated 22&nbsp;October&nbsp;2026. Zoho operates as the single accounting environment — no Pylon or other external ERP.</span><span class="el">Τεχνική αξιολόγηση σκοπιμότητας σε απάντηση του εγγράφου πεδίου εφαρμογής της AFS Technologies με ημερομηνία 22&nbsp;Οκτωβρίου&nbsp;2026. Το Zoho λειτουργεί ως το μοναδικό λογιστικό περιβάλλον — χωρίς Pylon ή άλλο εξωτερικό ERP.</span></p>
     <div class="hero-meta">
       <div class="hero-meta-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        October 2026
+        <span class="en">October 2026</span><span class="el">Οκτώβριος 2026</span>
       </div>
       <div class="hero-meta-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        Theodoros Kalfas
+        <span class="en">Theodoros Kalfas</span><span class="el">Θεόδωρος Καλφάς</span>
       </div>
       <div class="hero-meta-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        14–18 weeks delivery
+        <span class="en">14–18 weeks delivery</span><span class="el">Παράδοση 14–18 εβδομάδες</span>
       </div>
     </div>
     <button class="pdf-btn" onclick="window.print()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      Download as PDF
+      <span class="en">Download as PDF</span><span class="el">Λήψη ως PDF</span>
     </button>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
+      <button class="lang-btn" onclick="setLang('el')" id="btn-el">GR</button>
+    </div>
   </div>
 </header>
 
 <div class="content-area">
 
-<!-- ===== SECTION 1: SUMMARY TABLE ===== -->
+<!-- SECTION 1 -->
 <section id="summary">
-  <h2><span class="section-num">01</span> Summary Response Table</h2>
-  <div class="summary-table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Scope Area</th>
-          <th>Feasibility</th>
-          <th>Implementation Type</th>
-          <th>Dependencies</th>
-          <th>Est. Time</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Core Accounting</td>
-          <td><span class="badge badge-yes">Yes</span></td>
-          <td>Native Zoho Books + configuration</td>
-          <td>Greek CoA manual setup</td>
-          <td>1–2 weeks</td>
-        </tr>
-        <tr>
-          <td>Greek Localization</td>
-          <td><span class="badge badge-partial">Partially</span></td>
-          <td>Configuration + custom development (Creator)</td>
-          <td>E3 classification mapping; ΕΛΠ structure</td>
-          <td>2–4 weeks</td>
-        </tr>
-        <tr>
-          <td>myDATA</td>
-          <td><span class="badge badge-partial">Partially</span></td>
-          <td>Custom integration (Creator + AADE API)</td>
-          <td>AADE API credentials; certified provider selection</td>
-          <td>2–4 weeks</td>
-        </tr>
-        <tr>
-          <td>Electronic Invoicing</td>
-          <td><span class="badge badge-yes">Yes</span></td>
-          <td>Provider API integration (invisible within Zoho)</td>
-          <td>Certified provider contract</td>
-          <td>1–2 weeks</td>
-        </tr>
-        <tr>
-          <td>Reporting</td>
-          <td><span class="badge badge-partial">Partially</span></td>
-          <td>Native Zoho reports + custom (Analytics/Creator)</td>
-          <td>Completion of Greek Localization &amp; myDATA layers</td>
-          <td>1–2 weeks</td>
-        </tr>
-        <tr>
-          <td>Multi Company</td>
-          <td><span class="badge badge-yes">Yes</span></td>
-          <td>Zoho multi-org + Practice + Creator dashboard</td>
-          <td>Zoho Practice license; multi-org enabled</td>
-          <td>1 week</td>
-        </tr>
-        <tr>
-          <td>Automation</td>
-          <td><span class="badge badge-yes">Yes</span></td>
-          <td>Native workflows + Deluge custom functions</td>
-          <td>Completion of myDATA integration layer</td>
-          <td>3–4 weeks</td>
-        </tr>
-        <tr>
-          <td>Greek Accounting Layer</td>
-          <td><span class="badge badge-yes">Yes</span></td>
-          <td>Custom product layer in Zoho Creator</td>
-          <td>All above layers operational</td>
-          <td>3–4 weeks</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="callout callout-info">
-    <strong>Total estimated delivery: 14–18 weeks</strong> across 4 phases, with staggered dependencies. The existing CRM Logistirio module and its Creator clone provide a working foundation for the expense/payment tracking portion of this scope.
-  </div>
+  <h2><span class="section-num">01</span> <span class="en">Summary Response Table</span><span class="el">Συνοπτικός Πίνακας Απόκρισης</span></h2>
+  <div class="summary-table-wrap"><table>
+    <thead><tr><th><span class="en">Scope Area</span><span class="el">Πεδίο Εφαρμογής</span></th><th><span class="en">Feasibility</span><span class="el">Σκοπιμότητα</span></th><th><span class="en">Implementation Type</span><span class="el">Τύπος Υλοποίησης</span></th><th><span class="en">Dependencies</span><span class="el">Εξαρτήσεις</span></th><th><span class="en">Est. Time</span><span class="el">Εκτ. Χρόνος</span></th></tr></thead>
+    <tbody>
+      <tr><td><span class="en">Core Accounting</span><span class="el">Βασική Λογιστική</span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td><span class="en">Native Zoho Books + configuration</span><span class="el">Εγγενές Zoho Books + παραμετροποίηση</span></td><td><span class="en">Greek CoA manual setup</span><span class="el">Χειροκίνητη ρύθμιση ελληνικού ΛΣ</span></td><td><span class="en">1–2 weeks</span><span class="el">1–2 εβδομάδες</span></td></tr>
+      <tr><td><span class="en">Greek Localization</span><span class="el">Ελληνική Προσαρμογή</span></td><td><span class="badge badge-partial"><span class="en">Partially</span><span class="el">Μερικώς</span></span></td><td><span class="en">Configuration + custom development (Creator)</span><span class="el">Παραμετροποίηση + προσαρμοσμένη ανάπτυξη (Creator)</span></td><td><span class="en">E3 classification mapping; ΕΛΠ structure</span><span class="el">Αντιστοίχιση ταξινόμησης E3 · δομή ΕΛΠ</span></td><td><span class="en">2–4 weeks</span><span class="el">2–4 εβδομάδες</span></td></tr>
+      <tr><td>myDATA</td><td><span class="badge badge-partial"><span class="en">Partially</span><span class="el">Μερικώς</span></span></td><td><span class="en">Custom integration (Creator + AADE API)</span><span class="el">Προσαρμοσμένη ενσωμάτωση (Creator + AADE API)</span></td><td><span class="en">AADE API credentials; certified provider selection</span><span class="el">Διαπιστευτήρια AADE API · επιλογή πιστοποιημένου παρόχου</span></td><td><span class="en">2–4 weeks</span><span class="el">2–4 εβδομάδες</span></td></tr>
+      <tr><td><span class="en">Electronic Invoicing</span><span class="el">Ηλεκτρονική Τιμολόγηση</span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td><span class="en">Provider API integration (invisible within Zoho)</span><span class="el">Ενσωμάτωση API παρόχου (αόρατη εντός Zoho)</span></td><td><span class="en">Certified provider contract</span><span class="el">Σύμβαση πιστοποιημένου παρόχου</span></td><td><span class="en">1–2 weeks</span><span class="el">1–2 εβδομάδες</span></td></tr>
+      <tr><td><span class="en">Reporting</span><span class="el">Αναφορές</span></td><td><span class="badge badge-partial"><span class="en">Partially</span><span class="el">Μερικώς</span></span></td><td><span class="en">Native Zoho reports + custom (Analytics/Creator)</span><span class="el">Εγγενείς αναφορές Zoho + προσαρμοσμένες (Analytics/Creator)</span></td><td><span class="en">Completion of Greek Localization &amp; myDATA layers</span><span class="el">Ολοκλήρωση επιπέδων Ελληνικής Προσαρμογής &amp; myDATA</span></td><td><span class="en">1–2 weeks</span><span class="el">1–2 εβδομάδες</span></td></tr>
+      <tr><td><span class="en">Multi Company</span><span class="el">Πολυεταιρική Διαχείριση</span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td><span class="en">Zoho multi-org + Practice + Creator dashboard</span><span class="el">Zoho multi-org + Practice + πίνακας ελέγχου Creator</span></td><td><span class="en">Zoho Practice license; multi-org enabled</span><span class="el">Άδεια Zoho Practice · ενεργοποίηση multi-org</span></td><td><span class="en">1 week</span><span class="el">1 εβδομάδα</span></td></tr>
+      <tr><td><span class="en">Automation</span><span class="el">Αυτοματισμοί</span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td><span class="en">Native workflows + Deluge custom functions</span><span class="el">Εγγενείς ροές εργασίας + προσαρμοσμένες συναρτήσεις Deluge</span></td><td><span class="en">Completion of myDATA integration layer</span><span class="el">Ολοκλήρωση επιπέδου ενσωμάτωσης myDATA</span></td><td><span class="en">3–4 weeks</span><span class="el">3–4 εβδομάδες</span></td></tr>
+      <tr><td><span class="en">Greek Accounting Layer</span><span class="el">Ελληνικό Λογιστικό Επίπεδο</span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td><span class="en">Custom product layer in Zoho Creator</span><span class="el">Προσαρμοσμένο επίπεδο προϊόντος σε Zoho Creator</span></td><td><span class="en">All above layers operational</span><span class="el">Όλα τα παραπάνω επίπεδα σε λειτουργία</span></td><td><span class="en">3–4 weeks</span><span class="el">3–4 εβδομάδες</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout callout-info"><span class="en"><strong>Total estimated delivery: 14–18 weeks</strong> across 4 phases, with staggered dependencies. The existing CRM Logistirio module and its Creator clone provide a working foundation for the expense/payment tracking portion of this scope.</span><span class="el"><strong>Συνολική εκτιμώμενη παράδοση: 14–18 εβδομάδες</strong> σε 4 φάσεις, με κλιμακωτές εξαρτήσεις. Το υφιστάμενο module CRM Logistirio και ο κλώνος του σε Creator παρέχουν τη βάση για το τμήμα παρακολούθησης εξόδων/πληρωμών αυτού του πεδίου.</span></div>
 </section>
 
-<!-- ===== SECTION 2: CORE ACCOUNTING ===== -->
+<!-- SECTION 2 -->
 <section id="core-accounting">
-  <h2><span class="section-num">02</span> Core Accounting</h2>
-  <p class="section-intro">Zoho Books provides a full double-entry accounting engine natively. Every item listed in the scope is either available out of the box or achievable through configuration.</p>
-
-  <div class="req-table-wrap">
-    <table class="req-table">
-      <thead><tr><th>Requirement</th><th>Native</th><th>Config</th><th>Custom</th><th>Notes</th></tr></thead>
-      <tbody>
-        <tr><td>Greek Chart of Accounts (ΕΛΠ)</td><td><span class="badge badge-no">No</span></td><td><span class="badge badge-yes">Yes</span></td><td>—</td><td>Zoho Books has no pre-installed Greek CoA. The ΕΛΠ hierarchy must be manually created or imported via CSV. Structure fits natively.</td></tr>
-        <tr><td>Debit/credit entries</td><td><span class="badge badge-yes">Yes</span></td><td>—</td><td>—</td><td>Standard journal entry functionality.</td></tr>
-        <tr><td>Journal entries &amp; general journal</td><td><span class="badge badge-yes">Yes</span></td><td>—</td><td>—</td><td>Manual and automated journal entries supported.</td></tr>
-        <tr><td>General ledger &amp; detailed ledgers</td><td><span class="badge badge-yes">Yes</span></td><td>—</td><td>—</td><td>Native reports with filtering by account, date, contact.</td></tr>
-        <tr><td>Trial balance</td><td><span class="badge badge-yes">Yes</span></td><td>Minor</td><td>—</td><td>Opening balances entered manually or via migration. Period and closing balances native.</td></tr>
-        <tr><td>P&amp;L and Balance Sheet</td><td><span class="badge badge-yes">Yes</span></td><td>—</td><td>—</td><td>Standard financial reports with date-range and comparison options.</td></tr>
-        <tr><td>Customer &amp; supplier accounting</td><td><span class="badge badge-yes">Yes</span></td><td>—</td><td>—</td><td>Full AR/AP sub-ledgers. Logistirio module data syncs to Books contacts.</td></tr>
-        <tr><td>Bank accounts &amp; reconciliation</td><td><span class="badge badge-yes">Yes</span></td><td>Minor</td><td>—</td><td>Bank feeds via Yodlee or manual CSV import. Manual CSV is the reliable fallback for Greek banks.</td></tr>
-        <tr><td>Fixed assets &amp; depreciation</td><td><span class="badge badge-yes">Yes</span></td><td><span class="badge badge-yes">Yes</span></td><td>—</td><td>Fixed asset module with straight-line and declining balance. Greek depreciation rates need manual config.</td></tr>
-        <tr><td>VAT &amp; tax categories</td><td><span class="badge badge-yes">Yes</span></td><td><span class="badge badge-yes">Yes</span></td><td>—</td><td>Greek VAT rates (24%, 13%, 6%, island reduced) must be created manually.</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="callout callout-success">
-    <strong>Existing infrastructure:</strong> The CRM Logistirio module already tracks expenses, cost centers (Κέντρο Κόστους), bank accounts, VAT fields, and payment methods. This data flows into the accounting layer rather than being rebuilt.
-  </div>
-  <div class="callout callout-warning">
-    <strong>Important:</strong> Zoho Books does not have a Greece-specific edition (unlike UK/MTD or India/GST). The Greek UI language was added June 2026, but that is a translation layer, not a compliance package. All Greek-specific accounting logic must be configured manually.
-  </div>
+  <h2><span class="section-num">02</span> <span class="en">Core Accounting</span><span class="el">Βασική Λογιστική</span></h2>
+  <p class="section-intro"><span class="en">Zoho Books provides a full double-entry accounting engine natively. Every item listed in the scope is either available out of the box or achievable through configuration.</span><span class="el">Το Zoho Books παρέχει εγγενώς μια πλήρη μηχανή λογιστικής διπλογραφίας. Κάθε στοιχείο του πεδίου εφαρμογής είναι είτε διαθέσιμο έτοιμο είτε εφικτό μέσω παραμετροποίησης.</span></p>
+  <div class="req-table-wrap"><table class="req-table">
+    <thead><tr><th><span class="en">Requirement</span><span class="el">Απαίτηση</span></th><th><span class="en">Native</span><span class="el">Εγγενές</span></th><th><span class="en">Config</span><span class="el">Παραμ/ση</span></th><th><span class="en">Custom</span><span class="el">Προσαρμ.</span></th><th><span class="en">Notes</span><span class="el">Σημειώσεις</span></th></tr></thead>
+    <tbody>
+      <tr><td><span class="en">Greek Chart of Accounts (ΕΛΠ)</span><span class="el">Ελληνικό Λογιστικό Σχέδιο (ΕΛΠ)</span></td><td><span class="badge badge-no"><span class="en">No</span><span class="el">Όχι</span></span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td>—</td><td><span class="en">Zoho Books has no pre-installed Greek CoA. The ΕΛΠ hierarchy must be manually created or imported via CSV.</span><span class="el">Το Zoho Books δεν διαθέτει προεγκατεστημένο ελληνικό ΛΣ. Η ιεραρχία ΕΛΠ πρέπει να δημιουργηθεί χειροκίνητα ή να εισαχθεί μέσω CSV.</span></td></tr>
+      <tr><td><span class="en">Debit/credit entries</span><span class="el">Εγγραφές χρέωσης/πίστωσης</span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td>—</td><td>—</td><td><span class="en">Standard journal entry functionality.</span><span class="el">Τυπική λειτουργία ημερολογιακών εγγραφών.</span></td></tr>
+      <tr><td><span class="en">Journal entries &amp; general journal</span><span class="el">Ημερολογιακές εγγραφές &amp; γενικό ημερολόγιο</span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td>—</td><td>—</td><td><span class="en">Manual and automated journal entries supported.</span><span class="el">Υποστηρίζονται χειροκίνητες και αυτοματοποιημένες εγγραφές.</span></td></tr>
+      <tr><td><span class="en">General ledger &amp; detailed ledgers</span><span class="el">Γενικό καθολικό &amp; αναλυτικά καθολικά</span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td>—</td><td>—</td><td><span class="en">Native reports with filtering by account, date, contact.</span><span class="el">Εγγενείς αναφορές με φιλτράρισμα κατά λογαριασμό, ημερομηνία, επαφή.</span></td></tr>
+      <tr><td><span class="en">Trial balance</span><span class="el">Ισοζύγιο</span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td><span class="en">Minor</span><span class="el">Μικρή</span></td><td>—</td><td><span class="en">Opening balances entered manually or via migration. Period and closing balances native.</span><span class="el">Υπόλοιπα έναρξης εισάγονται χειροκίνητα ή μέσω μεταφοράς. Υπόλοιπα περιόδου και κλεισίματος εγγενώς.</span></td></tr>
+      <tr><td><span class="en">P&amp;L and Balance Sheet</span><span class="el">Αποτελέσματα Χρήσης &amp; Ισολογισμός</span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td>—</td><td>—</td><td><span class="en">Standard financial reports with date-range and comparison options.</span><span class="el">Τυπικές οικονομικές αναφορές με εύρος ημερομηνιών και επιλογές σύγκρισης.</span></td></tr>
+      <tr><td><span class="en">Customer &amp; supplier accounting</span><span class="el">Λογιστική πελατών &amp; προμηθευτών</span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td>—</td><td>—</td><td><span class="en">Full AR/AP sub-ledgers. Logistirio module data syncs to Books contacts.</span><span class="el">Πλήρη αναλυτικά καθολικά εισπρακτέων/πληρωτέων. Δεδομένα Logistirio συγχρονίζονται με επαφές Books.</span></td></tr>
+      <tr><td><span class="en">Bank accounts &amp; reconciliation</span><span class="el">Τραπεζικοί λογαριασμοί &amp; συμφωνία</span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td><span class="en">Minor</span><span class="el">Μικρή</span></td><td>—</td><td><span class="en">Bank feeds via Yodlee or manual CSV import. Manual CSV is the reliable fallback for Greek banks.</span><span class="el">Τραπεζικές ροές μέσω Yodlee ή χειροκίνητη εισαγωγή CSV. Η χειροκίνητη CSV είναι η αξιόπιστη εναλλακτική για ελληνικές τράπεζες.</span></td></tr>
+      <tr><td><span class="en">Fixed assets &amp; depreciation</span><span class="el">Πάγια &amp; αποσβέσεις</span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td>—</td><td><span class="en">Fixed asset module with straight-line and declining balance. Greek depreciation rates need manual config.</span><span class="el">Module παγίων με σταθερή και φθίνουσα απόσβεση. Οι ελληνικοί συντελεστές απόσβεσης χρειάζονται χειροκίνητη ρύθμιση.</span></td></tr>
+      <tr><td><span class="en">VAT &amp; tax categories</span><span class="el">ΦΠΑ &amp; φορολογικές κατηγορίες</span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td>—</td><td><span class="en">Greek VAT rates (24%, 13%, 6%, island reduced) must be created manually.</span><span class="el">Οι ελληνικοί συντελεστές ΦΠΑ (24%, 13%, 6%, μειωμένοι νησιών) πρέπει να δημιουργηθούν χειροκίνητα.</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout callout-success"><span class="en"><strong>Existing infrastructure:</strong> The CRM Logistirio module already tracks expenses, cost centers (Κέντρο Κόστους), bank accounts, VAT fields, and payment methods. This data flows into the accounting layer rather than being rebuilt.</span><span class="el"><strong>Υφιστάμενη υποδομή:</strong> Το module CRM Logistirio ήδη παρακολουθεί έξοδα, κέντρα κόστους, τραπεζικούς λογαριασμούς, πεδία ΦΠΑ και μεθόδους πληρωμής. Αυτά τα δεδομένα τροφοδοτούν το λογιστικό επίπεδο αντί να χτιστούν από την αρχή.</span></div>
+  <div class="callout callout-warning"><span class="en"><strong>Important:</strong> Zoho Books does not have a Greece-specific edition (unlike UK/MTD or India/GST). The Greek UI language was added June 2026, but that is a translation layer, not a compliance package. All Greek-specific accounting logic must be configured manually.</span><span class="el"><strong>Σημαντικό:</strong> Το Zoho Books δεν διαθέτει έκδοση ειδική για την Ελλάδα (σε αντίθεση με UK/MTD ή India/GST). Η ελληνική γλώσσα διεπαφής προστέθηκε τον Ιούνιο 2026, αλλά πρόκειται για επίπεδο μετάφρασης, όχι πακέτο συμμόρφωσης. Όλη η ελληνική λογιστική λογική πρέπει να παραμετροποιηθεί χειροκίνητα.</span></div>
 </section>
 
-<!-- ===== SECTION 3: GREEK LOCALIZATION ===== -->
+<!-- SECTION 3 -->
 <section id="greek-localization">
-  <h2><span class="section-num">03</span> Greek Accounting &amp; Tax Localization</h2>
-  <p class="section-intro">VAT configuration is straightforward in Zoho Books. E3 classification mapping, withholding tax, and the full ΕΛΠ structure require custom development in Zoho Creator, built as reusable components.</p>
-
-  <div class="req-table-wrap">
-    <table class="req-table">
-      <thead><tr><th>Requirement</th><th>Approach</th><th>Details</th></tr></thead>
-      <tbody>
-        <tr><td>VAT rates &amp; exemptions</td><td><span class="badge badge-native">Config in Books</span></td><td>Create tax rates for 24%, 13%, 6%, 0% (exempt), island reduced. Map to correct accounts. Exemption reasons (Article 39, intra-EU) configured as tax exemption categories.</td></tr>
-        <tr><td>Intra-EU &amp; reverse charge</td><td><span class="badge badge-native">Config + Deluge</span></td><td>Configure reverse charge tax rules. Automate the dual-entry (self-assessment) via Deluge custom functions on invoice/bill creation.</td></tr>
-        <tr><td>Withholding tax</td><td><span class="badge badge-partial">Config + Creator</span></td><td>Zoho Books has withholding tax for a few editions but not Greece. Build a module in Creator: lookup tables for rates by service category, automatic calculation on bill/payment creation, certificate generation.</td></tr>
-        <tr><td>Account mapping to tax treatment</td><td><span class="badge badge-native">Config in Books</span></td><td>Each account linked to its tax rate/group. Native functionality — set during CoA creation.</td></tr>
-        <tr><td>E3 classification mapping</td><td><span class="badge badge-partial">Custom (Creator)</span></td><td>No native E3 support in any Zoho product. Build an E3 Classification Engine: mapping table (Account → E3 category → myDATA type), rules engine, validation layer before myDATA submission.</td></tr>
-        <tr><td>Consistent tax logic</td><td><span class="badge badge-native">Config + Deluge</span></td><td>Configure Books tax rules. Add Deluge validation scripts on record creation/update to enforce E3 classification and correct tax treatment.</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="callout callout-info">
-    <strong>Key component:</strong> The E3 mapping engine is the most complex component of the entire scope. It must be modular (one configuration per client, reusable across the AFS portfolio), maintainable (AADE updates E3 categories periodically), and integrated into every transaction path. We propose building it as a dedicated Creator application module with its own forms, reports, and API endpoints.
-  </div>
+  <h2><span class="section-num">03</span> <span class="en">Greek Accounting &amp; Tax Localization</span><span class="el">Ελληνική Λογιστική &amp; Φορολογική Προσαρμογή</span></h2>
+  <p class="section-intro"><span class="en">VAT configuration is straightforward in Zoho Books. E3 classification mapping, withholding tax, and the full ΕΛΠ structure require custom development in Zoho Creator, built as reusable components.</span><span class="el">Η παραμετροποίηση ΦΠΑ είναι απλή στο Zoho Books. Η αντιστοίχιση ταξινόμησης E3, η παρακράτηση φόρου και η πλήρης δομή ΕΛΠ απαιτούν προσαρμοσμένη ανάπτυξη σε Zoho Creator, χτισμένη ως επαναχρησιμοποιήσιμα στοιχεία.</span></p>
+  <div class="req-table-wrap"><table class="req-table">
+    <thead><tr><th><span class="en">Requirement</span><span class="el">Απαίτηση</span></th><th><span class="en">Approach</span><span class="el">Προσέγγιση</span></th><th><span class="en">Details</span><span class="el">Λεπτομέρειες</span></th></tr></thead>
+    <tbody>
+      <tr><td><span class="en">VAT rates &amp; exemptions</span><span class="el">Συντελεστές ΦΠΑ &amp; απαλλαγές</span></td><td><span class="badge badge-native"><span class="en">Config in Books</span><span class="el">Ρύθμιση σε Books</span></span></td><td><span class="en">Create tax rates for 24%, 13%, 6%, 0% (exempt), island reduced. Map to correct accounts. Exemption reasons (Article 39, intra-EU) configured as tax exemption categories.</span><span class="el">Δημιουργία συντελεστών 24%, 13%, 6%, 0% (απαλλαγή), μειωμένοι νησιών. Αντιστοίχιση στους σωστούς λογαριασμούς. Λόγοι απαλλαγής (Άρθρο 39, ενδοκοινοτικές) ως κατηγορίες απαλλαγής φόρου.</span></td></tr>
+      <tr><td><span class="en">Intra-EU &amp; reverse charge</span><span class="el">Ενδοκοινοτικές &amp; αντίστροφη χρέωση</span></td><td><span class="badge badge-native">Config + Deluge</span></td><td><span class="en">Configure reverse charge tax rules. Automate the dual-entry (self-assessment) via Deluge custom functions on invoice/bill creation.</span><span class="el">Ρύθμιση κανόνων αντίστροφης χρέωσης. Αυτοματοποίηση της διπλής εγγραφής (αυτοεκτίμηση) μέσω Deluge custom functions κατά τη δημιουργία τιμολογίου/λογαριασμού.</span></td></tr>
+      <tr><td><span class="en">Withholding tax</span><span class="el">Παρακράτηση φόρου</span></td><td><span class="badge badge-partial">Config + Creator</span></td><td><span class="en">Zoho Books has withholding tax for a few editions but not Greece. Build a module in Creator: lookup tables for rates by service category, automatic calculation on bill/payment creation, certificate generation.</span><span class="el">Το Zoho Books έχει παρακράτηση φόρου για λίγες εκδόσεις αλλά όχι για Ελλάδα. Κατασκευή module σε Creator: πίνακες αναζήτησης συντελεστών ανά κατηγορία υπηρεσίας, αυτόματος υπολογισμός κατά τη δημιουργία λογαριασμού/πληρωμής, παραγωγή βεβαιώσεων.</span></td></tr>
+      <tr><td><span class="en">Account mapping to tax treatment</span><span class="el">Αντιστοίχιση λογαριασμών σε φορολογική μεταχείριση</span></td><td><span class="badge badge-native"><span class="en">Config in Books</span><span class="el">Ρύθμιση σε Books</span></span></td><td><span class="en">Each account linked to its tax rate/group. Native functionality — set during CoA creation.</span><span class="el">Κάθε λογαριασμός συνδεδεμένος με τον συντελεστή/ομάδα φόρου του. Εγγενής λειτουργία — ρύθμιση κατά τη δημιουργία ΛΣ.</span></td></tr>
+      <tr><td><span class="en">E3 classification mapping</span><span class="el">Αντιστοίχιση ταξινόμησης E3</span></td><td><span class="badge badge-partial">Custom (Creator)</span></td><td><span class="en">No native E3 support in any Zoho product. Build an E3 Classification Engine: mapping table (Account → E3 category → myDATA type), rules engine, validation layer before myDATA submission.</span><span class="el">Καμία εγγενής υποστήριξη E3 σε κανένα προϊόν Zoho. Κατασκευή Μηχανής Ταξινόμησης E3: πίνακας αντιστοίχισης (Λογαριασμός → κατηγορία E3 → τύπος myDATA), μηχανή κανόνων, επίπεδο επικύρωσης πριν την υποβολή στο myDATA.</span></td></tr>
+      <tr><td><span class="en">Consistent tax logic</span><span class="el">Συνεπής φορολογική λογική</span></td><td><span class="badge badge-native">Config + Deluge</span></td><td><span class="en">Configure Books tax rules. Add Deluge validation scripts on record creation/update to enforce E3 classification and correct tax treatment.</span><span class="el">Ρύθμιση φορολογικών κανόνων Books. Προσθήκη σεναρίων επικύρωσης Deluge κατά τη δημιουργία/ενημέρωση εγγραφών για επιβολή ταξινόμησης E3 και σωστής φορολογικής μεταχείρισης.</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout callout-info"><span class="en"><strong>Key component:</strong> The E3 mapping engine is the most complex component of the entire scope. It must be modular (one configuration per client, reusable across the AFS portfolio), maintainable (AADE updates E3 categories periodically), and integrated into every transaction path. We propose building it as a dedicated Creator application module with its own forms, reports, and API endpoints.</span><span class="el"><strong>Βασικό στοιχείο:</strong> Η μηχανή αντιστοίχισης E3 είναι το πλέον σύνθετο στοιχείο ολόκληρου του πεδίου εφαρμογής. Πρέπει να είναι αρθρωτή (μία παραμετροποίηση ανά πελάτη, επαναχρησιμοποιήσιμη σε όλο το χαρτοφυλάκιο AFS), συντηρήσιμη (η ΑΑΔΕ ενημερώνει τις κατηγορίες E3 περιοδικά) και ενσωματωμένη σε κάθε διαδρομή συναλλαγής. Προτείνουμε την κατασκευή της ως αποκλειστικό module εφαρμογής Creator με δικές του φόρμες, αναφορές και API endpoints.</span></div>
 </section>
 
-<!-- ===== SECTION 4: myDATA ===== -->
+<!-- SECTION 4 -->
 <section id="mydata">
-  <h2><span class="section-num">04</span> myDATA Integration</h2>
-  <p class="section-intro">No native Zoho–myDATA integration exists. The entire myDATA layer must be built as a custom integration within Zoho Creator, communicating with AADE's API. This is a legal requirement — the integration operates as an invisible backend process within the Zoho environment.</p>
-
-  <div class="callout callout-danger">
-    <strong>Regulatory timeline:</strong> Phase 1 (revenue &gt;€1M) became mandatory 2 March 2026. Phase 2 (all others) becomes mandatory <strong>2 November 2026</strong>. From 1 February 2027, direct ERP transmission is no longer accepted — a certified provider is required.
-  </div>
-
-  <div class="req-table-wrap">
-    <table class="req-table">
-      <thead><tr><th>Requirement</th><th>Approach</th><th>Details</th></tr></thead>
-      <tbody>
-        <tr><td>Income &amp; expense data within Zoho</td><td>Native (Books) + Creator sync</td><td>All transactions originate in Zoho Books. Creator pulls data via Books API. The CRM Logistirio module already captures expense categories and cost centers.</td></tr>
-        <tr><td>Retrieval of documents from AADE</td><td>Custom (Creator + AADE API)</td><td>Scheduled retrieval process calling AADE's myDATA API to fetch incoming documents. Results stored in Creator forms linked to Books transactions.</td></tr>
-        <tr><td>Transmission where required</td><td>Custom (Creator + provider API)</td><td>Creator orchestrates: validate E3 → send to provider API → provider transmits to AADE → receive MARK/UID.</td></tr>
-        <tr><td>Storage of MARK, UID</td><td>Custom (Creator + Books fields)</td><td>MARK and UID returned by AADE are stored in Creator and written back to Books invoice/bill as custom fields.</td></tr>
-        <tr><td>Income classifications</td><td>Custom (Creator)</td><td>Map each income transaction to correct myDATA classification based on account, tax rate, and document type.</td></tr>
-        <tr><td>Expense classifications</td><td>Custom (Creator)</td><td>Same architecture as income classifications, applied to bills and expense transactions.</td></tr>
-        <tr><td>Accounts → myDATA → E3 mapping</td><td>Custom (Creator)</td><td>Three-way mapping table: Books account → myDATA category → E3 classification. Configurable per client company. The backbone of the Greek Accounting Layer.</td></tr>
-        <tr><td>Reconciliation: books vs myDATA</td><td>Custom (Creator + Analytics)</td><td>Scheduled reconciliation comparing Books transactions against myDATA records. Flag mismatches by amount, date, counterparty, or classification.</td></tr>
-        <tr><td>Missing from accounting</td><td>Custom (Creator)</td><td>AADE documents with no matching Books transaction appear in a "missing from books" queue.</td></tr>
-        <tr><td>Missing from myDATA</td><td>Custom (Creator)</td><td>Books transactions not yet transmitted appear in a "missing from myDATA" queue.</td></tr>
-        <tr><td>Discrepancy management</td><td>Custom (Creator)</td><td>Transmission status dashboard: pending, transmitted, accepted, rejected, error. Automatic retry logic. Error detail logging.</td></tr>
-      </tbody>
-    </table>
-  </div>
+  <h2><span class="section-num">04</span> <span class="en">myDATA Integration</span><span class="el">Ενσωμάτωση myDATA</span></h2>
+  <p class="section-intro"><span class="en">No native Zoho–myDATA integration exists. The entire myDATA layer must be built as a custom integration within Zoho Creator, communicating with AADE's API. This is a legal requirement — the integration operates as an invisible backend process within the Zoho environment.</span><span class="el">Δεν υπάρχει εγγενής ενσωμάτωση Zoho–myDATA. Ολόκληρο το επίπεδο myDATA πρέπει να χτιστεί ως προσαρμοσμένη ενσωμάτωση εντός Zoho Creator, επικοινωνώντας με το API της ΑΑΔΕ. Πρόκειται για νομική υποχρέωση — η ενσωμάτωση λειτουργεί ως αόρατη διαδικασία backend εντός του περιβάλλοντος Zoho.</span></p>
+  <div class="callout callout-danger"><span class="en"><strong>Regulatory timeline:</strong> Phase 1 (revenue &gt;€1M) became mandatory 2 March 2026. Phase 2 (all others) becomes mandatory <strong>2 November 2026</strong>. From 1 February 2027, direct ERP transmission is no longer accepted — a certified provider is required.</span><span class="el"><strong>Κανονιστικό χρονοδιάγραμμα:</strong> Η Φάση 1 (έσοδα &gt;€1M) κατέστη υποχρεωτική στις 2 Μαρτίου 2026. Η Φάση 2 (όλοι οι υπόλοιποι) καθίσταται υποχρεωτική <strong>2 Νοεμβρίου 2026</strong>. Από 1 Φεβρουαρίου 2027, η απευθείας μετάδοση από ERP δεν γίνεται πλέον δεκτή — απαιτείται πιστοποιημένος πάροχος.</span></div>
+  <div class="req-table-wrap"><table class="req-table">
+    <thead><tr><th><span class="en">Requirement</span><span class="el">Απαίτηση</span></th><th><span class="en">Approach</span><span class="el">Προσέγγιση</span></th><th><span class="en">Details</span><span class="el">Λεπτομέρειες</span></th></tr></thead>
+    <tbody>
+      <tr><td><span class="en">Income &amp; expense data within Zoho</span><span class="el">Δεδομένα εσόδων &amp; εξόδων εντός Zoho</span></td><td>Native (Books) + Creator sync</td><td><span class="en">All transactions originate in Zoho Books. Creator pulls data via Books API. The CRM Logistirio module already captures expense categories and cost centers.</span><span class="el">Όλες οι συναλλαγές προέρχονται από το Zoho Books. Ο Creator αντλεί δεδομένα μέσω Books API. Το module CRM Logistirio ήδη καταγράφει κατηγορίες εξόδων και κέντρα κόστους.</span></td></tr>
+      <tr><td><span class="en">Retrieval of documents from AADE</span><span class="el">Ανάκτηση εγγράφων από ΑΑΔΕ</span></td><td>Custom (Creator + AADE API)</td><td><span class="en">Scheduled retrieval process calling AADE's myDATA API to fetch incoming documents. Results stored in Creator forms linked to Books transactions.</span><span class="el">Προγραμματισμένη διαδικασία ανάκτησης που καλεί το myDATA API της ΑΑΔΕ για λήψη εισερχόμενων εγγράφων. Αποθήκευση σε φόρμες Creator συνδεδεμένες με συναλλαγές Books.</span></td></tr>
+      <tr><td><span class="en">Transmission where required</span><span class="el">Μετάδοση όπου απαιτείται</span></td><td>Custom (Creator + provider API)</td><td><span class="en">Creator orchestrates: validate E3 → send to provider API → provider transmits to AADE → receive MARK/UID.</span><span class="el">Ο Creator ενορχηστρώνει: επικύρωση E3 → αποστολή σε API παρόχου → ο πάροχος μεταδίδει στην ΑΑΔΕ → λήψη MARK/UID.</span></td></tr>
+      <tr><td><span class="en">Storage of MARK, UID</span><span class="el">Αποθήκευση MARK, UID</span></td><td>Custom (Creator + Books fields)</td><td><span class="en">MARK and UID returned by AADE are stored in Creator and written back to Books invoice/bill as custom fields.</span><span class="el">Τα MARK και UID που επιστρέφονται από την ΑΑΔΕ αποθηκεύονται στον Creator και εγγράφονται πίσω στο τιμολόγιο/λογαριασμό Books ως προσαρμοσμένα πεδία.</span></td></tr>
+      <tr><td><span class="en">Income classifications</span><span class="el">Ταξινομήσεις εσόδων</span></td><td>Custom (Creator)</td><td><span class="en">Map each income transaction to correct myDATA classification based on account, tax rate, and document type.</span><span class="el">Αντιστοίχιση κάθε συναλλαγής εσόδων στη σωστή ταξινόμηση myDATA με βάση λογαριασμό, συντελεστή φόρου και τύπο εγγράφου.</span></td></tr>
+      <tr><td><span class="en">Expense classifications</span><span class="el">Ταξινομήσεις εξόδων</span></td><td>Custom (Creator)</td><td><span class="en">Same architecture as income classifications, applied to bills and expense transactions.</span><span class="el">Ίδια αρχιτεκτονική με τις ταξινομήσεις εσόδων, εφαρμοσμένη σε λογαριασμούς και συναλλαγές εξόδων.</span></td></tr>
+      <tr><td><span class="en">Accounts → myDATA → E3 mapping</span><span class="el">Λογαριασμοί → myDATA → αντιστοίχιση E3</span></td><td>Custom (Creator)</td><td><span class="en">Three-way mapping table: Books account → myDATA category → E3 classification. Configurable per client company.</span><span class="el">Τριπλός πίνακας αντιστοίχισης: λογαριασμός Books → κατηγορία myDATA → ταξινόμηση E3. Παραμετροποιήσιμο ανά εταιρεία πελάτη.</span></td></tr>
+      <tr><td><span class="en">Reconciliation: books vs myDATA</span><span class="el">Συμφωνία: books vs myDATA</span></td><td>Custom (Creator + Analytics)</td><td><span class="en">Scheduled reconciliation comparing Books transactions against myDATA records. Flag mismatches by amount, date, counterparty, or classification.</span><span class="el">Προγραμματισμένη συμφωνία που συγκρίνει συναλλαγές Books με εγγραφές myDATA. Σήμανση αναντιστοιχιών κατά ποσό, ημερομηνία, αντισυμβαλλόμενο ή ταξινόμηση.</span></td></tr>
+      <tr><td><span class="en">Missing from accounting</span><span class="el">Ελλείπουν από τη λογιστική</span></td><td>Custom (Creator)</td><td><span class="en">AADE documents with no matching Books transaction appear in a "missing from books" queue.</span><span class="el">Έγγραφα ΑΑΔΕ χωρίς αντίστοιχη συναλλαγή Books εμφανίζονται σε ουρά «ελλείπουν από books».</span></td></tr>
+      <tr><td><span class="en">Missing from myDATA</span><span class="el">Ελλείπουν από myDATA</span></td><td>Custom (Creator)</td><td><span class="en">Books transactions not yet transmitted appear in a "missing from myDATA" queue.</span><span class="el">Συναλλαγές Books που δεν έχουν ακόμη μεταδοθεί εμφανίζονται σε ουρά «ελλείπουν από myDATA».</span></td></tr>
+      <tr><td><span class="en">Discrepancy management</span><span class="el">Διαχείριση αποκλίσεων</span></td><td>Custom (Creator)</td><td><span class="en">Transmission status dashboard: pending, transmitted, accepted, rejected, error. Automatic retry logic. Error detail logging.</span><span class="el">Πίνακας κατάστασης μετάδοσης: εκκρεμεί, μεταδόθηκε, αποδεκτό, απορρίφθηκε, σφάλμα. Λογική αυτόματης επανάληψης. Καταγραφή λεπτομερειών σφαλμάτων.</span></td></tr>
+    </tbody>
+  </table></div>
 </section>
 
-<!-- ===== SECTION 5: E-INVOICING ===== -->
+<!-- SECTION 5 -->
 <section id="einvoicing">
-  <h2><span class="section-num">05</span> Electronic Invoicing</h2>
-  <p class="section-intro">The entire e-invoicing flow can be delivered as described. The certified provider operates exclusively as an invisible API layer — the user never leaves Zoho.</p>
-
-  <div class="req-table-wrap">
-    <table class="req-table">
-      <thead><tr><th>Requirement</th><th>Approach</th><th>Details</th></tr></thead>
-      <tbody>
-        <tr><td>Invoice creation inside Zoho</td><td>Native (Books)</td><td>Invoices created using standard invoice forms. No change to the user's workflow.</td></tr>
-        <tr><td>Automatic transmission to provider</td><td>Custom (Deluge + Creator)</td><td>On invoice confirmation, a Deluge function triggers automatically: packages invoice data and sends to provider's API. The user sees nothing.</td></tr>
-        <tr><td>Provider → AADE transmission</td><td>Provider handles</td><td>Provider authenticates, transmits to AADE/myDATA, returns result. This is the provider's core legal obligation.</td></tr>
-        <tr><td>Return of MARK, UID, status</td><td>Custom (Deluge + Creator)</td><td>Response captured by callback or polling. Identifiers written back to Books invoice as custom fields and stored in Creator.</td></tr>
-        <tr><td>Error handling &amp; audit trail</td><td>Custom (Creator)</td><td>Transmission log: every attempt logged with timestamp, payload hash, response code, result. Retry queue with configurable intervals. Persistent failures escalated.</td></tr>
-        <tr><td>No provider portal required</td><td>Architecture design</td><td>All interaction is server-to-server (Zoho → Provider API → AADE). Provider's portal exists as fallback only.</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="callout callout-warning">
-    <strong>Provider selection pending:</strong> Candidates include Epsilon Digital, SoftOne e-services, Entersoft, and others on AADE's licensed list. Zoho partners with B2Brouter for Spain/France — B2Brouter is <strong>not</strong> certified for Greece.
-  </div>
+  <h2><span class="section-num">05</span> <span class="en">Electronic Invoicing</span><span class="el">Ηλεκτρονική Τιμολόγηση</span></h2>
+  <p class="section-intro"><span class="en">The entire e-invoicing flow can be delivered as described. The certified provider operates exclusively as an invisible API layer — the user never leaves Zoho.</span><span class="el">Ολόκληρη η ροή ηλεκτρονικής τιμολόγησης μπορεί να παραδοθεί όπως περιγράφεται. Ο πιστοποιημένος πάροχος λειτουργεί αποκλειστικά ως αόρατο επίπεδο API — ο χρήστης δεν φεύγει ποτέ από το Zoho.</span></p>
+  <div class="req-table-wrap"><table class="req-table">
+    <thead><tr><th><span class="en">Requirement</span><span class="el">Απαίτηση</span></th><th><span class="en">Approach</span><span class="el">Προσέγγιση</span></th><th><span class="en">Details</span><span class="el">Λεπτομέρειες</span></th></tr></thead>
+    <tbody>
+      <tr><td><span class="en">Invoice creation inside Zoho</span><span class="el">Δημιουργία τιμολογίου εντός Zoho</span></td><td>Native (Books)</td><td><span class="en">Invoices created using standard invoice forms. No change to the user's workflow.</span><span class="el">Τιμολόγια δημιουργούνται με τυπικές φόρμες τιμολογίων. Καμία αλλαγή στη ροή εργασίας του χρήστη.</span></td></tr>
+      <tr><td><span class="en">Automatic transmission to provider</span><span class="el">Αυτόματη μετάδοση σε πάροχο</span></td><td>Custom (Deluge + Creator)</td><td><span class="en">On invoice confirmation, a Deluge function triggers automatically: packages invoice data and sends to provider's API.</span><span class="el">Κατά την επιβεβαίωση τιμολογίου, μια συνάρτηση Deluge ενεργοποιείται αυτόματα: πακετάρει τα δεδομένα τιμολογίου και τα στέλνει στο API του παρόχου.</span></td></tr>
+      <tr><td><span class="en">Provider → AADE transmission</span><span class="el">Μετάδοση Πάροχος → ΑΑΔΕ</span></td><td><span class="en">Provider handles</span><span class="el">Διαχειρίζεται ο πάροχος</span></td><td><span class="en">Provider authenticates, transmits to AADE/myDATA, returns result.</span><span class="el">Ο πάροχος πιστοποιεί, μεταδίδει στην ΑΑΔΕ/myDATA, επιστρέφει αποτέλεσμα.</span></td></tr>
+      <tr><td><span class="en">Return of MARK, UID, status</span><span class="el">Επιστροφή MARK, UID, κατάστασης</span></td><td>Custom (Deluge + Creator)</td><td><span class="en">Response captured by callback or polling. Identifiers written back to Books invoice as custom fields.</span><span class="el">Η απόκριση καταγράφεται μέσω callback ή polling. Τα αναγνωριστικά εγγράφονται πίσω στο τιμολόγιο Books ως προσαρμοσμένα πεδία.</span></td></tr>
+      <tr><td><span class="en">Error handling &amp; audit trail</span><span class="el">Διαχείριση σφαλμάτων &amp; ίχνος ελέγχου</span></td><td>Custom (Creator)</td><td><span class="en">Transmission log: every attempt logged with timestamp, payload hash, response code, result.</span><span class="el">Αρχείο μετάδοσης: κάθε προσπάθεια καταγράφεται με χρονοσήμανση, hash payload, κωδικό απόκρισης, αποτέλεσμα.</span></td></tr>
+      <tr><td><span class="en">No provider portal required</span><span class="el">Δεν απαιτείται πύλη παρόχου</span></td><td><span class="en">Architecture design</span><span class="el">Σχεδιασμός αρχιτεκτονικής</span></td><td><span class="en">All interaction is server-to-server (Zoho → Provider API → AADE). Provider's portal exists as fallback only.</span><span class="el">Όλη η αλληλεπίδραση είναι server-to-server (Zoho → API Παρόχου → ΑΑΔΕ). Η πύλη του παρόχου υπάρχει μόνο ως εναλλακτική.</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout callout-warning"><span class="en"><strong>Provider selection pending:</strong> Candidates include Epsilon Digital, SoftOne e-services, Entersoft, and others on AADE's licensed list. Zoho partners with B2Brouter for Spain/France — B2Brouter is <strong>not</strong> certified for Greece.</span><span class="el"><strong>Εκκρεμεί επιλογή παρόχου:</strong> Υποψήφιοι περιλαμβάνουν Epsilon Digital, SoftOne e-services, Entersoft και άλλους στη λίστα αδειοδοτημένων της ΑΑΔΕ. Το Zoho συνεργάζεται με B2Brouter για Ισπανία/Γαλλία — το B2Brouter <strong>δεν</strong> είναι πιστοποιημένο για Ελλάδα.</span></div>
 </section>
 
-<!-- ===== SECTION 6: REPORTING ===== -->
+<!-- SECTION 6 -->
 <section id="reporting">
-  <h2><span class="section-num">06</span> Reporting</h2>
-  <p class="section-intro">Standard accounting reports are native in Zoho Books. Greek-specific reports (VAT declarations, myDATA reconciliation, E3 classification) require custom development within Zoho Analytics and Creator.</p>
-
-  <div class="req-table-wrap">
-    <table class="req-table">
-      <thead><tr><th>Report</th><th>Native</th><th>Custom</th><th>Notes</th></tr></thead>
-      <tbody>
-        <tr><td>Trial Balance</td><td><span class="badge badge-yes">Yes</span></td><td>—</td><td>Native with date-range filtering.</td></tr>
-        <tr><td>General Ledger</td><td><span class="badge badge-yes">Yes</span></td><td>—</td><td>Native with account/date/contact filters.</td></tr>
-        <tr><td>P&amp;L / Balance Sheet</td><td><span class="badge badge-yes">Yes</span></td><td>—</td><td>Native with comparison periods and custom date ranges.</td></tr>
-        <tr><td>Detailed ledgers</td><td><span class="badge badge-yes">Yes</span></td><td>—</td><td>Native sub-ledger reports per account.</td></tr>
-        <tr><td>VAT reporting</td><td><span class="badge badge-partial">Partial</span></td><td><span class="badge badge-yes">Yes</span></td><td>Books generates tax summaries, but Greek VAT return formats (F2, Φ2) require custom reporting in Analytics/Creator to match TAXISNET submission. Export to compatible format for upload.</td></tr>
-        <tr><td>Income &amp; expense reporting</td><td><span class="badge badge-yes">Yes</span></td><td>—</td><td>Native reports with categorization. CRM Logistirio module also provides operational expense views.</td></tr>
-        <tr><td>Customer &amp; supplier balances</td><td><span class="badge badge-yes">Yes</span></td><td>—</td><td>Native AR/AP aging and balance reports.</td></tr>
-        <tr><td>Aging reports</td><td><span class="badge badge-yes">Yes</span></td><td>—</td><td>Native receivables and payables aging with configurable buckets.</td></tr>
-        <tr><td>Cash flow reporting</td><td><span class="badge badge-yes">Yes</span></td><td>Minor</td><td>Native cash flow statement. Custom views may be needed for Greek-specific formatting.</td></tr>
-        <tr><td>myDATA reconciliation</td><td><span class="badge badge-no">No</span></td><td><span class="badge badge-yes">Yes</span></td><td>Custom report in Creator/Analytics: side-by-side comparison of Books transactions vs myDATA records. Shows matched, unmatched, and discrepant items.</td></tr>
-        <tr><td>Accounting vs myDATA discrepancy</td><td><span class="badge badge-no">No</span></td><td><span class="badge badge-yes">Yes</span></td><td>Custom report highlighting differences in amounts, classifications, or missing documents between the two systems.</td></tr>
-        <tr><td>Tax declarations (Φ2, Ε4, etc.)</td><td><span class="badge badge-no">No</span></td><td><span class="badge badge-yes">Yes</span></td><td>Custom reporting within Zoho (Analytics + Creator). Generates data in the format required for TAXISNET upload. No external software needed.</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="callout callout-info">
-    Native Zoho Books reports serve <strong>60–70%</strong> of the reporting scope. The remaining Greek-specific reports are built in Zoho Analytics and Creator. All reporting stays within the Zoho ecosystem.
-  </div>
+  <h2><span class="section-num">06</span> <span class="en">Reporting</span><span class="el">Αναφορές</span></h2>
+  <p class="section-intro"><span class="en">Standard accounting reports are native in Zoho Books. Greek-specific reports (VAT declarations, myDATA reconciliation, E3 classification) require custom development within Zoho Analytics and Creator.</span><span class="el">Οι τυπικές λογιστικές αναφορές είναι εγγενείς στο Zoho Books. Οι ελληνικές αναφορές (δηλώσεις ΦΠΑ, συμφωνία myDATA, ταξινόμηση E3) απαιτούν προσαρμοσμένη ανάπτυξη σε Zoho Analytics και Creator.</span></p>
+  <div class="req-table-wrap"><table class="req-table">
+    <thead><tr><th><span class="en">Report</span><span class="el">Αναφορά</span></th><th><span class="en">Native</span><span class="el">Εγγενές</span></th><th><span class="en">Custom</span><span class="el">Προσαρμ.</span></th><th><span class="en">Notes</span><span class="el">Σημειώσεις</span></th></tr></thead>
+    <tbody>
+      <tr><td><span class="en">Trial Balance</span><span class="el">Ισοζύγιο</span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td>—</td><td><span class="en">Native with date-range filtering.</span><span class="el">Εγγενές με φιλτράρισμα εύρους ημερομηνιών.</span></td></tr>
+      <tr><td><span class="en">General Ledger</span><span class="el">Γενικό Καθολικό</span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td>—</td><td><span class="en">Native with account/date/contact filters.</span><span class="el">Εγγενές με φίλτρα λογαριασμού/ημερομηνίας/επαφής.</span></td></tr>
+      <tr><td><span class="en">P&amp;L / Balance Sheet</span><span class="el">Αποτελέσματα / Ισολογισμός</span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td>—</td><td><span class="en">Native with comparison periods and custom date ranges.</span><span class="el">Εγγενές με περιόδους σύγκρισης και προσαρμοσμένα εύρη ημερομηνιών.</span></td></tr>
+      <tr><td><span class="en">VAT reporting</span><span class="el">Αναφορές ΦΠΑ</span></td><td><span class="badge badge-partial"><span class="en">Partial</span><span class="el">Μερικό</span></span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td><span class="en">Books generates tax summaries, but Greek VAT return formats (F2, Φ2) require custom reporting in Analytics/Creator.</span><span class="el">Το Books παράγει φορολογικές συνόψεις, αλλά οι μορφές δηλώσεων ΦΠΑ (F2, Φ2) απαιτούν προσαρμοσμένες αναφορές σε Analytics/Creator.</span></td></tr>
+      <tr><td><span class="en">myDATA reconciliation</span><span class="el">Συμφωνία myDATA</span></td><td><span class="badge badge-no"><span class="en">No</span><span class="el">Όχι</span></span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td><span class="en">Custom report: side-by-side comparison of Books transactions vs myDATA records.</span><span class="el">Προσαρμοσμένη αναφορά: σύγκριση δίπλα-δίπλα συναλλαγών Books με εγγραφές myDATA.</span></td></tr>
+      <tr><td><span class="en">Tax declarations (Φ2, Ε4, etc.)</span><span class="el">Φορολογικές δηλώσεις (Φ2, Ε4, κ.λπ.)</span></td><td><span class="badge badge-no"><span class="en">No</span><span class="el">Όχι</span></span></td><td><span class="badge badge-yes"><span class="en">Yes</span><span class="el">Ναι</span></span></td><td><span class="en">Custom reporting for TAXISNET upload format. No external software needed.</span><span class="el">Προσαρμοσμένες αναφορές για μορφή ανεβάσματος TAXISNET. Δεν χρειάζεται εξωτερικό λογισμικό.</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout callout-info"><span class="en">Native Zoho Books reports serve <strong>60–70%</strong> of the reporting scope. The remaining Greek-specific reports are built in Zoho Analytics and Creator.</span><span class="el">Οι εγγενείς αναφορές Zoho Books καλύπτουν το <strong>60–70%</strong> του πεδίου αναφορών. Οι υπόλοιπες ελληνικές αναφορές χτίζονται σε Zoho Analytics και Creator.</span></div>
 </section>
 
-<!-- ===== SECTION 7: MULTI COMPANY ===== -->
+<!-- SECTION 7 -->
 <section id="multi-company">
-  <h2><span class="section-num">07</span> Multi Company &amp; Accounting Firm</h2>
-  <p class="section-intro">Zoho provides multiple mechanisms for multi-company management. The right combination depends on scale and cost tolerance.</p>
-
-  <div class="req-table-wrap">
-    <table class="req-table">
-      <thead><tr><th>Requirement</th><th>Approach</th><th>Details</th></tr></thead>
-      <tbody>
-        <tr><td>Separate books &amp; CoA per company</td><td>Zoho multi-org</td><td>Each client entity gets its own Zoho organization with its own Books instance. CoA can be templated from a master.</td></tr>
-        <tr><td>Separate invoices, bills, myDATA</td><td>Zoho multi-org</td><td>Full data separation by design — each org is standalone. No data leakage between clients.</td></tr>
-        <tr><td>Central AFS access</td><td>Practice + Creator</td><td>Zoho Practice for client/task management. Creator dashboard for consolidated portfolio KPIs across all clients.</td></tr>
-        <tr><td>Scalable onboarding</td><td>Templated setup</td><td>Master template: standard Greek CoA, VAT rates, E3 mappings, automation rules. New client = create org → apply template → customize.</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="callout callout-warning">
-    <strong>Zoho Practice</strong> is a practice management tool (clients, tasks, documents, workflows). It is <strong>not</strong> a multi-org accounting dashboard — it does not show consolidated financial data across clients. For portfolio-level financial visibility, a custom Creator dashboard is required.
-  </div>
-
-  <div class="callout callout-info">
-    <strong>Subscription cost note:</strong> Each Zoho organization requires its own Zoho Books subscription (Professional plan or above for multi-currency and advanced features). For a multi-client accounting practice, this means a separate subscription per client entity. AFS should factor this recurring cost into the per-client pricing model. Zoho One bundles may offer better economics at scale.
-  </div>
+  <h2><span class="section-num">07</span> <span class="en">Multi Company &amp; Accounting Firm</span><span class="el">Πολυεταιρική Διαχείριση &amp; Λογιστικό Γραφείο</span></h2>
+  <p class="section-intro"><span class="en">Zoho provides multiple mechanisms for multi-company management. The right combination depends on scale and cost tolerance.</span><span class="el">Το Zoho παρέχει πολλαπλούς μηχανισμούς για πολυεταιρική διαχείριση. Ο σωστός συνδυασμός εξαρτάται από την κλίμακα και την ανοχή κόστους.</span></p>
+  <div class="req-table-wrap"><table class="req-table">
+    <thead><tr><th><span class="en">Requirement</span><span class="el">Απαίτηση</span></th><th><span class="en">Approach</span><span class="el">Προσέγγιση</span></th><th><span class="en">Details</span><span class="el">Λεπτομέρειες</span></th></tr></thead>
+    <tbody>
+      <tr><td><span class="en">Separate books &amp; CoA per company</span><span class="el">Ξεχωριστά βιβλία &amp; ΛΣ ανά εταιρεία</span></td><td>Zoho multi-org</td><td><span class="en">Each client entity gets its own Zoho organization with its own Books instance. CoA can be templated from a master.</span><span class="el">Κάθε εταιρεία πελάτη αποκτά τον δικό της οργανισμό Zoho με δική του εγκατάσταση Books. Το ΛΣ μπορεί να δημιουργηθεί από πρότυπο.</span></td></tr>
+      <tr><td><span class="en">Central AFS access</span><span class="el">Κεντρική πρόσβαση AFS</span></td><td>Practice + Creator</td><td><span class="en">Zoho Practice for client/task management. Creator dashboard for consolidated portfolio KPIs.</span><span class="el">Zoho Practice για διαχείριση πελατών/εργασιών. Πίνακας ελέγχου Creator για ενοποιημένους δείκτες KPI χαρτοφυλακίου.</span></td></tr>
+      <tr><td><span class="en">Scalable onboarding</span><span class="el">Κλιμακούμενη ενσωμάτωση</span></td><td><span class="en">Templated setup</span><span class="el">Ρύθμιση βάσει προτύπου</span></td><td><span class="en">Master template: standard Greek CoA, VAT rates, E3 mappings, automation rules. New client = create org → apply template → customize.</span><span class="el">Κύριο πρότυπο: τυπικό ελληνικό ΛΣ, συντελεστές ΦΠΑ, αντιστοιχίσεις E3, κανόνες αυτοματισμού. Νέος πελάτης = δημιουργία org → εφαρμογή προτύπου → προσαρμογή.</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout callout-warning"><span class="en"><strong>Zoho Practice</strong> is a practice management tool (clients, tasks, documents, workflows). It is <strong>not</strong> a multi-org accounting dashboard. For portfolio-level financial visibility, a custom Creator dashboard is required.</span><span class="el"><strong>Zoho Practice</strong> είναι εργαλείο διαχείρισης γραφείου (πελάτες, εργασίες, έγγραφα, ροές εργασίας). <strong>Δεν</strong> είναι πίνακας ελέγχου λογιστικής multi-org. Για οικονομική ορατότητα σε επίπεδο χαρτοφυλακίου, απαιτείται προσαρμοσμένος πίνακας ελέγχου Creator.</span></div>
 </section>
 
-<!-- ===== SECTION 8: AUTOMATION ===== -->
+<!-- SECTION 8 -->
 <section id="automation">
-  <h2><span class="section-num">08</span> Automation</h2>
-  <p class="section-intro">Zoho Books and Creator together provide strong automation capabilities. Native workflow rules handle standard posting, and Deluge custom functions extend to myDATA-specific logic.</p>
-
-  <div class="req-table-wrap">
-    <table class="req-table">
-      <thead><tr><th>Requirement</th><th>Approach</th><th>Details</th></tr></thead>
-      <tbody>
-        <tr><td>Auto entries from invoices/bills/banks</td><td>Native (Books)</td><td>Zoho Books automatically creates journal entries. Core functionality.</td></tr>
-        <tr><td>Automatic posting rules</td><td>Native + Deluge</td><td>Bank rules for categorization. Complex rules (cost center allocation, multi-account splits) via Deluge custom functions.</td></tr>
-        <tr><td>myDATA matching &amp; classification</td><td>Custom (Creator)</td><td>E3 engine applies classifications automatically. Matching algorithm compares Books vs myDATA by amount, date, counterparty.</td></tr>
-        <tr><td>Bank reconciliation automation</td><td>Native + Deluge</td><td>Built-in reconciliation with suggested matches. Deluge enhances for Greek patterns (payroll batch, tax payment ID).</td></tr>
-        <tr><td>Alerts for discrepancies</td><td>Custom (Creator + Flow)</td><td>Alert rules: unmatched myDATA docs, failed transmissions, pending classifications. Delivery via email, Cliq, or CRM activity.</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="callout callout-success">
-    <strong>Proven patterns:</strong> The IASIS Creator application already demonstrates auto-population of daily grids, subform row insertion, edit-mode reversal logic, and Creator → CRM sync with PDF attachments. These Deluge patterns extend directly to accounting automation.
-  </div>
+  <h2><span class="section-num">08</span> <span class="en">Automation</span><span class="el">Αυτοματισμοί</span></h2>
+  <p class="section-intro"><span class="en">Zoho Books and Creator together provide strong automation capabilities. Native workflow rules handle standard posting, and Deluge custom functions extend to myDATA-specific logic.</span><span class="el">Το Zoho Books και ο Creator μαζί παρέχουν ισχυρές δυνατότητες αυτοματισμού. Οι εγγενείς κανόνες ροής εργασίας χειρίζονται τυπικές καταχωρήσεις, και οι προσαρμοσμένες συναρτήσεις Deluge επεκτείνονται στη λογική myDATA.</span></p>
+  <div class="req-table-wrap"><table class="req-table">
+    <thead><tr><th><span class="en">Requirement</span><span class="el">Απαίτηση</span></th><th><span class="en">Approach</span><span class="el">Προσέγγιση</span></th><th><span class="en">Details</span><span class="el">Λεπτομέρειες</span></th></tr></thead>
+    <tbody>
+      <tr><td><span class="en">Auto entries from invoices/bills/banks</span><span class="el">Αυτόματες εγγραφές από τιμολόγια/λογαριασμούς/τράπεζες</span></td><td>Native (Books)</td><td><span class="en">Zoho Books automatically creates journal entries. Core functionality.</span><span class="el">Το Zoho Books δημιουργεί αυτόματα ημερολογιακές εγγραφές. Βασική λειτουργία.</span></td></tr>
+      <tr><td><span class="en">Automatic posting rules</span><span class="el">Αυτόματοι κανόνες καταχώρησης</span></td><td>Native + Deluge</td><td><span class="en">Bank rules for categorization. Complex rules (cost center allocation, multi-account splits) via Deluge.</span><span class="el">Τραπεζικοί κανόνες για κατηγοριοποίηση. Σύνθετοι κανόνες (κατανομή κέντρου κόστους, διαχωρισμός πολλαπλών λογαριασμών) μέσω Deluge.</span></td></tr>
+      <tr><td><span class="en">myDATA matching &amp; classification</span><span class="el">Αντιστοίχιση &amp; ταξινόμηση myDATA</span></td><td>Custom (Creator)</td><td><span class="en">E3 engine applies classifications automatically. Matching algorithm compares Books vs myDATA by amount, date, counterparty.</span><span class="el">Η μηχανή E3 εφαρμόζει ταξινομήσεις αυτόματα. Ο αλγόριθμος αντιστοίχισης συγκρίνει Books vs myDATA κατά ποσό, ημερομηνία, αντισυμβαλλόμενο.</span></td></tr>
+      <tr><td><span class="en">Alerts for discrepancies</span><span class="el">Ειδοποιήσεις για αποκλίσεις</span></td><td>Custom (Creator + Flow)</td><td><span class="en">Alert rules: unmatched myDATA docs, failed transmissions, pending classifications. Delivery via email, Cliq, or CRM activity.</span><span class="el">Κανόνες ειδοποίησης: μη αντιστοιχισμένα έγγραφα myDATA, αποτυχημένες μεταδόσεις, εκκρεμείς ταξινομήσεις. Παράδοση μέσω email, Cliq ή δραστηριότητας CRM.</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout callout-success"><span class="en"><strong>Proven patterns:</strong> The IASIS Creator application already demonstrates auto-population of daily grids, subform row insertion, edit-mode reversal logic, and Creator → CRM sync with PDF attachments. These Deluge patterns extend directly to accounting automation.</span><span class="el"><strong>Δοκιμασμένα πρότυπα:</strong> Η εφαρμογή IASIS Creator ήδη επιδεικνύει αυτόματη συμπλήρωση ημερήσιων πινάκων, εισαγωγή γραμμών υποφορμών, λογική αναστροφής κατάστασης επεξεργασίας και συγχρονισμό Creator → CRM με συνημμένα PDF. Αυτά τα πρότυπα Deluge επεκτείνονται απευθείας στον αυτοματισμό λογιστικής.</span></div>
 </section>
 
-<!-- ===== SECTION 9: GREEK ACCOUNTING LAYER ===== -->
+<!-- SECTION 9 -->
 <section id="greek-layer">
-  <h2><span class="section-num">09</span> Greek Accounting Layer</h2>
-  <p class="section-intro">Built entirely within the Zoho ecosystem (Creator + Books + Deluge) as modular, reusable, and maintainable components. No dependency on Pylon or any external ERP.</p>
-
-  <div class="req-table-wrap">
-    <table class="req-table">
-      <thead><tr><th>Design Principle</th><th>Implementation</th></tr></thead>
-      <tbody>
-        <tr><td><strong>No ad hoc custom fields</strong></td><td>The Layer lives in Creator as a structured application. Books custom fields used only for display (e.g., MARK on an invoice), not as backbone.</td></tr>
-        <tr><td><strong>Modular</strong></td><td>Each block (E3 engine, myDATA sync, withholding tax, e-invoicing connector) is a separate Creator module with own forms, views, and scripts.</td></tr>
-        <tr><td><strong>Reusable</strong></td><td>Packaged as a Creator template. New client onboarding = install template → configure client-specific mappings. Core logic shared.</td></tr>
-        <tr><td><strong>Per-client config</strong></td><td>Each client's CoA-to-E3 mapping, VAT rates, provider credentials, and permissions stored in dedicated Creator records.</td></tr>
-        <tr><td><strong>Extensible</strong></td><td>New requirements (AADE updates, new providers) added as new modules or config updates, not rewrites. Books engine remains untouched.</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="req-table-wrap">
-    <table class="req-table">
-      <thead><tr><th>Layer</th><th>Component</th><th>Role</th></tr></thead>
-      <tbody>
-        <tr><td>User interface</td><td><strong>Zoho Books</strong></td><td>Invoices, bills, journals, bank reconciliation, financial reports — the accountant's daily workspace</td></tr>
-        <tr><td>User interface</td><td><strong>Zoho CRM (Logistirio)</strong></td><td>Expense/payment tracking, supplier management, cost centers — already built</td></tr>
-        <tr><td>Business logic</td><td><strong>Creator (Greek Layer)</strong></td><td>E3 engine, myDATA sync, withholding tax, e-invoice orchestration, reconciliation, classification rules</td></tr>
-        <tr><td>API layer</td><td><strong>Certified Provider API</strong></td><td>Invisible within Zoho — no user interaction with provider portal</td></tr>
-        <tr><td>Reporting</td><td><strong>Zoho Analytics</strong></td><td>Cross-system dashboards, myDATA reconciliation, portfolio KPIs</td></tr>
-        <tr><td>Practice mgmt</td><td><strong>Zoho Practice</strong></td><td>Client management, task workflows, document management for AFS team</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="callout callout-info">
-    <strong>User experience:</strong> The accountant opens Zoho Books, creates an invoice, and clicks confirm. Everything else — E3 classification, provider transmission, AADE submission, MARK retrieval, status logging — happens automatically in the background. The accountant sees the MARK appear within seconds. They never open a second application.
-  </div>
+  <h2><span class="section-num">09</span> <span class="en">Greek Accounting Layer</span><span class="el">Ελληνικό Λογιστικό Επίπεδο</span></h2>
+  <p class="section-intro"><span class="en">Built entirely within the Zoho ecosystem (Creator + Books + Deluge) as modular, reusable, and maintainable components. No dependency on Pylon or any external ERP.</span><span class="el">Χτισμένο εξ ολοκλήρου εντός του οικοσυστήματος Zoho (Creator + Books + Deluge) ως αρθρωτά, επαναχρησιμοποιήσιμα και συντηρήσιμα στοιχεία. Καμία εξάρτηση από Pylon ή οποιοδήποτε εξωτερικό ERP.</span></p>
+  <div class="req-table-wrap"><table class="req-table">
+    <thead><tr><th><span class="en">Design Principle</span><span class="el">Αρχή Σχεδιασμού</span></th><th><span class="en">Implementation</span><span class="el">Υλοποίηση</span></th></tr></thead>
+    <tbody>
+      <tr><td><strong><span class="en">Modular</span><span class="el">Αρθρωτό</span></strong></td><td><span class="en">Each block (E3 engine, myDATA sync, withholding tax, e-invoicing connector) is a separate Creator module with own forms, views, and scripts.</span><span class="el">Κάθε μπλοκ (μηχανή E3, συγχρονισμός myDATA, παρακράτηση φόρου, σύνδεσμος ηλ. τιμολόγησης) είναι ξεχωριστό module Creator με δικές του φόρμες, προβολές και σενάρια.</span></td></tr>
+      <tr><td><strong><span class="en">Reusable</span><span class="el">Επαναχρησιμοποιήσιμο</span></strong></td><td><span class="en">Packaged as a Creator template. New client onboarding = install template → configure client-specific mappings.</span><span class="el">Πακεταρισμένο ως πρότυπο Creator. Ενσωμάτωση νέου πελάτη = εγκατάσταση προτύπου → ρύθμιση αντιστοιχίσεων πελάτη.</span></td></tr>
+      <tr><td><strong><span class="en">Per-client config</span><span class="el">Παραμετροποίηση ανά πελάτη</span></strong></td><td><span class="en">Each client's CoA-to-E3 mapping, VAT rates, provider credentials, and permissions stored in dedicated Creator records.</span><span class="el">Η αντιστοίχιση ΛΣ-προς-E3, οι συντελεστές ΦΠΑ, τα διαπιστευτήρια παρόχου και τα δικαιώματα κάθε πελάτη αποθηκεύονται σε αποκλειστικές εγγραφές Creator.</span></td></tr>
+      <tr><td><strong><span class="en">Extensible</span><span class="el">Επεκτάσιμο</span></strong></td><td><span class="en">New requirements (AADE updates, new providers) added as new modules or config updates, not rewrites.</span><span class="el">Νέες απαιτήσεις (ενημερώσεις ΑΑΔΕ, νέοι πάροχοι) προστίθενται ως νέα modules ή ενημερώσεις ρυθμίσεων, όχι ξαναγράψιμο.</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout callout-info"><span class="en"><strong>User experience:</strong> The accountant opens Zoho Books, creates an invoice, and clicks confirm. Everything else — E3 classification, provider transmission, AADE submission, MARK retrieval — happens automatically in the background. They never open a second application.</span><span class="el"><strong>Εμπειρία χρήστη:</strong> Ο λογιστής ανοίγει το Zoho Books, δημιουργεί ένα τιμολόγιο και κάνει κλικ στην επιβεβαίωση. Όλα τα υπόλοιπα — ταξινόμηση E3, μετάδοση σε πάροχο, υποβολή στην ΑΑΔΕ, ανάκτηση MARK — γίνονται αυτόματα στο παρασκήνιο. Δεν ανοίγει ποτέ δεύτερη εφαρμογή.</span></div>
 </section>
 
-<!-- ===== ARCHITECTURE DIAGRAM ===== -->
+<!-- ARCHITECTURE DIAGRAM -->
 <section id="architecture">
   <div class="arch-section">
-    <h3>Solution Architecture — Greek Accounting Ecosystem</h3>
-    <p style="text-align:center; font-size:0.75rem; color:var(--fg-muted); margin-bottom:1.25rem;">All services within Zoho One</p>
-
-    <!-- Layer 1 -->
-    <div class="tier tier--user">
-      <div class="tier-header"><span class="tier-badge">Layer 1</span><span class="tier-label">User Interface — where people work daily</span></div>
-      <div class="tier-body">
-        <div class="node"><p class="node-name"><span class="node-icon" style="background:var(--tier-user)">B</span>Zoho Books<span class="badge-new-sm">Configure</span></p><p class="node-desc">Invoices, bills, journals, bank reconciliation, financial statements.</p><span class="node-tag">books.zoho.eu</span></div>
-        <div class="node"><p class="node-name"><span class="node-icon" style="background:#e05d44">C</span>Zoho CRM<span class="badge-existing-sm">Existing</span></p><p class="node-desc">Logistirio module — expenses, cost centers, VAT, payment tracking.</p><span class="node-tag">crm.zoho.eu</span></div>
-        <div class="node"><p class="node-name"><span class="node-icon" style="background:#8b5cf6">P</span>Zoho Practice<span class="badge-new-sm">New</span></p><p class="node-desc">AFS client management, task workflows, deadline tracking.</p><span class="node-tag">practice.zoho.eu</span></div>
-      </div>
-    </div>
-    <div class="connectors">
-      <div class="connector-arrow"><svg viewBox="0 0 16 24"><path d="M8 0 L8 18 M4 14 L8 20 L12 14" stroke="var(--arrow)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="arrow-label">Webhooks + Deluge</span></div>
-      <div class="connector-arrow"><svg viewBox="0 0 16 24"><path d="M8 0 L8 18 M4 14 L8 20 L12 14" stroke="var(--arrow)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 4 L8 0 L12 4" stroke="var(--arrow)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="arrow-label">Bidirectional sync</span></div>
-      <div class="connector-arrow"><svg viewBox="0 0 16 24"><path d="M8 0 L8 18 M4 14 L8 20 L12 14" stroke="var(--arrow)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="arrow-label">Task triggers</span></div>
-    </div>
-
-    <!-- Layer 2 -->
-    <div class="tier tier--logic">
-      <div class="tier-header"><span class="tier-badge">Layer 2</span><span class="tier-label">Business Logic — Greek Accounting Layer (Creator)</span></div>
-      <div class="tier-body">
-        <div class="node"><p class="node-name"><span class="node-icon" style="background:var(--tier-logic)">E3</span>E3 Classification Engine<span class="badge-new-sm">Build</span></p><p class="node-desc">Automatic mapping of transactions to AADE E3 categories.</p></div>
-        <div class="node"><p class="node-name"><span class="node-icon" style="background:var(--tier-logic)">μ</span>myDATA Sync Module<span class="badge-new-sm">Build</span></p><p class="node-desc">Transmission, MARK/UID storage, status tracking, reconciliation.</p></div>
-        <div class="node"><p class="node-name"><span class="node-icon" style="background:var(--tier-logic)">τ</span>Tax &amp; Withholding<span class="badge-new-sm">Build</span></p><p class="node-desc">Withholding tax calculations, split postings, declaration support.</p></div>
-        <div class="node"><p class="node-name"><span class="node-icon" style="background:#d946ef">⇄</span>Creator ↔ CRM Sync<span class="badge-existing-sm">Existing</span></p><p class="node-desc">Bidirectional sync. External partner upload portal.</p></div>
-      </div>
-    </div>
-    <div class="connectors">
-      <div class="connector-arrow"><svg viewBox="0 0 16 24"><path d="M8 0 L8 18 M4 14 L8 20 L12 14" stroke="var(--arrow)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="arrow-label">REST API calls</span></div>
-      <div class="connector-arrow"><svg viewBox="0 0 16 24"><path d="M8 0 L8 18 M4 14 L8 20 L12 14" stroke="var(--arrow)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 4 L8 0 L12 4" stroke="var(--arrow)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="arrow-label">MARK / status return</span></div>
-    </div>
-
-    <!-- Layer 3 -->
-    <div class="tier tier--api">
-      <div class="tier-header"><span class="tier-badge">Layer 3</span><span class="tier-label">API Integration — invisible service layer</span></div>
-      <div class="tier-body">
-        <div class="node"><p class="node-name"><span class="node-icon" style="background:var(--tier-api)">⚡</span>Certified Provider API<span class="badge-new-sm">Integrate</span></p><p class="node-desc">AADE-licensed e-invoicing provider. API only — no user-facing portal.</p><span class="node-tag">Provider TBD</span></div>
-        <div class="node"><p class="node-name"><span class="node-icon" style="background:var(--tier-api)">🔗</span>Zoho Internal APIs</p><p class="node-desc">Books API, CRM API, Creator API, Analytics API. All via official REST.</p><span class="node-tag">*.zoho.eu/api/v2</span></div>
-      </div>
-    </div>
-    <div class="connectors">
-      <div class="connector-arrow"><svg viewBox="0 0 16 24"><path d="M8 0 L8 18 M4 14 L8 20 L12 14" stroke="var(--tier-external)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="arrow-label" style="color:var(--tier-external)">Via certified provider</span></div>
-    </div>
-
-    <!-- Layer 4 -->
-    <div class="tier tier--data">
-      <div class="tier-header"><span class="tier-badge">Layer 4</span><span class="tier-label">Data &amp; Reporting</span></div>
-      <div class="tier-body">
-        <div class="node"><p class="node-name"><span class="node-icon" style="background:var(--tier-data)">A</span>Zoho Analytics<span class="badge-new-sm">Configure</span></p><p class="node-desc">Cross-system dashboards, myDATA reconciliation, portfolio KPIs.</p></div>
-        <div class="node"><p class="node-name"><span class="node-icon" style="background:var(--tier-data)">📋</span>Books Reports</p><p class="node-desc">50+ standard financial reports — P&amp;L, Balance Sheet, Trial Balance, Aging.</p></div>
-        <div class="node"><p class="node-name"><span class="node-icon" style="background:var(--tier-data)">📊</span>Creator Reports</p><p class="node-desc">Transmission logs, error dashboards, E3 audit trail.</p></div>
-      </div>
-    </div>
-    <div class="connectors">
-      <div class="connector-arrow"><svg viewBox="0 0 16 24"><path d="M8 0 L8 18 M4 14 L8 20 L12 14" stroke="var(--tier-external)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="arrow-label" style="color:var(--tier-external)">Via certified provider</span></div>
-    </div>
-
-    <!-- Layer 5 -->
-    <div class="tier tier--external">
-      <div class="tier-header"><span class="tier-badge">Layer 5</span><span class="tier-label">External — Government (ΑΑΔΕ)</span></div>
-      <div class="tier-body">
-        <div class="node"><p class="node-name"><span class="node-icon" style="background:var(--tier-external)">GR</span>AADE myDATA</p><p class="node-desc">Greece's electronic books platform. Returns MARK per document.</p><span class="node-tag">mydata.aade.gr</span></div>
-        <div class="node"><p class="node-name"><span class="node-icon" style="background:var(--tier-external)">📄</span>AADE Timologio</p><p class="node-desc">Government free invoicing — backup path only.</p><span class="node-tag">timologio.aade.gr</span></div>
-      </div>
-    </div>
+    <h3><span class="en">Solution Architecture — Greek Accounting Ecosystem</span><span class="el">Αρχιτεκτονική Λύσης — Ελληνικό Λογιστικό Οικοσύστημα</span></h3>
+    <p style="text-align:center;font-size:0.75rem;color:var(--fg-muted);margin-bottom:1.25rem;"><span class="en">All services within Zoho One</span><span class="el">Όλες οι υπηρεσίες εντός Zoho One</span></p>
+    <div class="tier tier--user"><div class="tier-header"><span class="tier-badge"><span class="en">Layer 1</span><span class="el">Επίπεδο 1</span></span><span class="tier-label"><span class="en">User Interface — where people work daily</span><span class="el">Διεπαφή Χρήστη — όπου εργάζονται καθημερινά</span></span></div><div class="tier-body">
+      <div class="node"><p class="node-name"><span class="node-icon" style="background:var(--tier-user)">B</span>Zoho Books<span class="badge-new-sm"><span class="en">Configure</span><span class="el">Ρύθμιση</span></span></p><p class="node-desc"><span class="en">Invoices, bills, journals, bank reconciliation, financial statements.</span><span class="el">Τιμολόγια, λογαριασμοί, ημερολόγια, τραπεζική συμφωνία, οικονομικές καταστάσεις.</span></p><span class="node-tag">books.zoho.eu</span></div>
+      <div class="node"><p class="node-name"><span class="node-icon" style="background:#e05d44">C</span>Zoho CRM<span class="badge-existing-sm"><span class="en">Existing</span><span class="el">Υπάρχον</span></span></p><p class="node-desc"><span class="en">Logistirio module — expenses, cost centers, VAT, payment tracking.</span><span class="el">Module Logistirio — έξοδα, κέντρα κόστους, ΦΠΑ, παρακολούθηση πληρωμών.</span></p><span class="node-tag">crm.zoho.eu</span></div>
+      <div class="node"><p class="node-name"><span class="node-icon" style="background:#8b5cf6">P</span>Zoho Practice<span class="badge-new-sm"><span class="en">New</span><span class="el">Νέο</span></span></p><p class="node-desc"><span class="en">AFS client management, task workflows, deadline tracking.</span><span class="el">Διαχείριση πελατών AFS, ροές εργασιών, παρακολούθηση προθεσμιών.</span></p><span class="node-tag">practice.zoho.eu</span></div>
+    </div></div>
+    <div class="connectors"><div class="connector-arrow"><svg viewBox="0 0 16 24"><path d="M8 0 L8 18 M4 14 L8 20 L12 14" stroke="var(--arrow)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="arrow-label">Webhooks + Deluge</span></div><div class="connector-arrow"><svg viewBox="0 0 16 24"><path d="M8 0 L8 18 M4 14 L8 20 L12 14" stroke="var(--arrow)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 4 L8 0 L12 4" stroke="var(--arrow)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="arrow-label"><span class="en">Bidirectional sync</span><span class="el">Αμφίδρομος συγχρονισμός</span></span></div><div class="connector-arrow"><svg viewBox="0 0 16 24"><path d="M8 0 L8 18 M4 14 L8 20 L12 14" stroke="var(--arrow)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="arrow-label"><span class="en">Task triggers</span><span class="el">Ενεργοποιήσεις εργασιών</span></span></div></div>
+    <div class="tier tier--logic"><div class="tier-header"><span class="tier-badge"><span class="en">Layer 2</span><span class="el">Επίπεδο 2</span></span><span class="tier-label"><span class="en">Business Logic — Greek Accounting Layer (Creator)</span><span class="el">Επιχειρηματική Λογική — Ελληνικό Λογιστικό Επίπεδο (Creator)</span></span></div><div class="tier-body">
+      <div class="node"><p class="node-name"><span class="node-icon" style="background:var(--tier-logic)">E3</span><span class="en">E3 Classification Engine</span><span class="el">Μηχανή Ταξινόμησης E3</span><span class="badge-new-sm"><span class="en">Build</span><span class="el">Κατασκευή</span></span></p><p class="node-desc"><span class="en">Automatic mapping of transactions to AADE E3 categories.</span><span class="el">Αυτόματη αντιστοίχιση συναλλαγών σε κατηγορίες ΑΑΔΕ E3.</span></p></div>
+      <div class="node"><p class="node-name"><span class="node-icon" style="background:var(--tier-logic)">μ</span><span class="en">myDATA Sync Module</span><span class="el">Module Συγχρονισμού myDATA</span><span class="badge-new-sm"><span class="en">Build</span><span class="el">Κατασκευή</span></span></p><p class="node-desc"><span class="en">Transmission, MARK/UID storage, status tracking, reconciliation.</span><span class="el">Μετάδοση, αποθήκευση MARK/UID, παρακολούθηση κατάστασης, συμφωνία.</span></p></div>
+      <div class="node"><p class="node-name"><span class="node-icon" style="background:var(--tier-logic)">τ</span><span class="en">Tax &amp; Withholding</span><span class="el">Φόροι &amp; Παρακρατήσεις</span><span class="badge-new-sm"><span class="en">Build</span><span class="el">Κατασκευή</span></span></p><p class="node-desc"><span class="en">Withholding tax calculations, split postings, declaration support.</span><span class="el">Υπολογισμοί παρακράτησης φόρου, διαχωρισμένες καταχωρήσεις, υποστήριξη δηλώσεων.</span></p></div>
+    </div></div>
+    <div class="connectors"><div class="connector-arrow"><svg viewBox="0 0 16 24"><path d="M8 0 L8 18 M4 14 L8 20 L12 14" stroke="var(--arrow)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="arrow-label">REST API calls</span></div><div class="connector-arrow"><svg viewBox="0 0 16 24"><path d="M8 0 L8 18 M4 14 L8 20 L12 14" stroke="var(--arrow)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 4 L8 0 L12 4" stroke="var(--arrow)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="arrow-label"><span class="en">MARK / status return</span><span class="el">Επιστροφή MARK / κατάστασης</span></span></div></div>
+    <div class="tier tier--api"><div class="tier-header"><span class="tier-badge"><span class="en">Layer 3</span><span class="el">Επίπεδο 3</span></span><span class="tier-label"><span class="en">API Integration — invisible service layer</span><span class="el">Ενσωμάτωση API — αόρατο επίπεδο υπηρεσιών</span></span></div><div class="tier-body">
+      <div class="node"><p class="node-name"><span class="node-icon" style="background:var(--tier-api)">⚡</span><span class="en">Certified Provider API</span><span class="el">API Πιστοποιημένου Παρόχου</span><span class="badge-new-sm"><span class="en">Integrate</span><span class="el">Ενσωμάτωση</span></span></p><p class="node-desc"><span class="en">AADE-licensed e-invoicing provider. API only — no user-facing portal.</span><span class="el">Αδειοδοτημένος πάροχος ηλ. τιμολόγησης ΑΑΔΕ. Μόνο API — χωρίς πύλη χρήστη.</span></p></div>
+      <div class="node"><p class="node-name"><span class="node-icon" style="background:var(--tier-api)">🔗</span><span class="en">Zoho Internal APIs</span><span class="el">Εσωτερικά APIs Zoho</span></p><p class="node-desc"><span class="en">Books API, CRM API, Creator API, Analytics API. All via official REST.</span><span class="el">Books API, CRM API, Creator API, Analytics API. Όλα μέσω επίσημου REST.</span></p><span class="node-tag">*.zoho.eu/api/v2</span></div>
+    </div></div>
+    <div class="connectors"><div class="connector-arrow"><svg viewBox="0 0 16 24"><path d="M8 0 L8 18 M4 14 L8 20 L12 14" stroke="var(--tier-external)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="arrow-label" style="color:var(--tier-external)"><span class="en">Via certified provider</span><span class="el">Μέσω πιστοποιημένου παρόχου</span></span></div></div>
+    <div class="tier tier--data"><div class="tier-header"><span class="tier-badge"><span class="en">Layer 4</span><span class="el">Επίπεδο 4</span></span><span class="tier-label"><span class="en">Data &amp; Reporting</span><span class="el">Δεδομένα &amp; Αναφορές</span></span></div><div class="tier-body">
+      <div class="node"><p class="node-name"><span class="node-icon" style="background:var(--tier-data)">A</span>Zoho Analytics<span class="badge-new-sm"><span class="en">Configure</span><span class="el">Ρύθμιση</span></span></p><p class="node-desc"><span class="en">Cross-system dashboards, myDATA reconciliation, portfolio KPIs.</span><span class="el">Διασυστημικοί πίνακες ελέγχου, συμφωνία myDATA, δείκτες KPI χαρτοφυλακίου.</span></p></div>
+      <div class="node"><p class="node-name"><span class="node-icon" style="background:var(--tier-data)">📋</span><span class="en">Books Reports</span><span class="el">Αναφορές Books</span></p><p class="node-desc"><span class="en">50+ standard financial reports — P&amp;L, Balance Sheet, Trial Balance, Aging.</span><span class="el">50+ τυπικές οικονομικές αναφορές — Αποτελέσματα, Ισολογισμός, Ισοζύγιο, Ηλικίωση.</span></p></div>
+    </div></div>
+    <div class="connectors"><div class="connector-arrow"><svg viewBox="0 0 16 24"><path d="M8 0 L8 18 M4 14 L8 20 L12 14" stroke="var(--tier-external)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="arrow-label" style="color:var(--tier-external)"><span class="en">Via certified provider</span><span class="el">Μέσω πιστοποιημένου παρόχου</span></span></div></div>
+    <div class="tier tier--external"><div class="tier-header"><span class="tier-badge"><span class="en">Layer 5</span><span class="el">Επίπεδο 5</span></span><span class="tier-label"><span class="en">External — Government (ΑΑΔΕ)</span><span class="el">Εξωτερικό — Κυβέρνηση (ΑΑΔΕ)</span></span></div><div class="tier-body">
+      <div class="node"><p class="node-name"><span class="node-icon" style="background:var(--tier-external)">GR</span>AADE myDATA</p><p class="node-desc"><span class="en">Greece's electronic books platform. Returns MARK per document.</span><span class="el">Η πλατφόρμα ηλεκτρονικών βιβλίων της Ελλάδας. Επιστρέφει MARK ανά έγγραφο.</span></p><span class="node-tag">mydata.aade.gr</span></div>
+      <div class="node"><p class="node-name"><span class="node-icon" style="background:var(--tier-external)">📄</span>AADE Timologio</p><p class="node-desc"><span class="en">Government free invoicing — backup path only.</span><span class="el">Δωρεάν κρατική τιμολόγηση — μόνο ως εναλλακτική.</span></p><span class="node-tag">timologio.aade.gr</span></div>
+    </div></div>
   </div>
 </section>
 
-<!-- ===== SECTION 10: OPEN QUESTIONS ===== -->
+<!-- SECTION 10 -->
 <section id="open-questions">
-  <h2><span class="section-num">10</span> Open Questions &amp; Prerequisites</h2>
-  <p class="section-intro">Before development begins, the following must be resolved. Items marked <span class="blocking-tag">Blocking</span> prevent work on dependent modules.</p>
-
-  <details class="question-group" open>
-    <summary><span class="blocking-tag">Blocking</span> Certified e-invoicing provider selection</summary>
-    <div class="q-body">
-      Which provider has AFS selected or shortlisted? The entire myDATA and e-invoicing integration depends on the provider's API specification, authentication method, sandbox availability, and pricing model. If no provider has been selected: evaluate based on API quality (REST/JSON preferred), sandbox availability, Zoho-compatible authentication (OAuth 2.0 or API key), Greek market coverage, and pricing per transmission. The start declaration for Phase 2 (deadline 2 November 2026) requires identifying the provider. Has this been filed?
-    </div>
-  </details>
-
-  <details class="question-group" open>
-    <summary><span class="blocking-tag">Blocking</span> Chart of Accounts</summary>
-    <div class="q-body">
-      Does AFS have a standard CoA template for all clients, or does each client maintain its own? Is the CoA based on ΕΓΛΣ (older) or ΕΛΠ (current)? We need the CoA-to-E3 mapping for at least one representative client to build and validate the E3 classification engine.
-    </div>
-  </details>
-
-  <details class="question-group">
-    <summary>Client portfolio scope</summary>
-    <div class="q-body">
-      How many organizations in the first phase? Are all clients Greek-domiciled or are there cross-border operations requiring multi-currency / intra-community VAT?
-    </div>
-  </details>
-
-  <details class="question-group">
-    <summary>Existing data &amp; migration</summary>
-    <div class="q-body">
-      Are clients migrating from Pylon or another ERP, or starting fresh? If migrating: opening balances, outstanding invoices, fixed asset registers, and historical myDATA submissions need import paths. Is there historical myDATA data in AADE that needs reconciliation from day one?
-    </div>
-  </details>
-
-  <details class="question-group">
-    <summary>Infrastructure &amp; environment</summary>
-    <div class="q-body">
-      Confirm the Zoho data center region for all organizations (EU expected — crm.zoho.eu). Confirm Creator and Analytics availability per subscription. Verify API rate limits support expected daily transaction volume (especially month-end closing).
-    </div>
-  </details>
+  <h2><span class="section-num">10</span> <span class="en">Open Questions &amp; Prerequisites</span><span class="el">Ανοικτά Ερωτήματα &amp; Προϋποθέσεις</span></h2>
+  <p class="section-intro"><span class="en">Before development begins, the following must be resolved. Items marked <span class="blocking-tag">Blocking</span> prevent work on dependent modules.</span><span class="el">Πριν ξεκινήσει η ανάπτυξη, πρέπει να επιλυθούν τα ακόλουθα. Τα στοιχεία με σήμανση <span class="blocking-tag">Αναστολή</span> εμποδίζουν την εργασία σε εξαρτημένα modules.</span></p>
+  <details class="question-group" open><summary><span class="blocking-tag"><span class="en">Blocking</span><span class="el">Αναστολή</span></span> <span class="en">Certified e-invoicing provider selection</span><span class="el">Επιλογή πιστοποιημένου παρόχου ηλ. τιμολόγησης</span></summary><div class="q-body"><span class="en">Which provider has AFS selected or shortlisted? The entire myDATA and e-invoicing integration depends on the provider's API specification, authentication method, sandbox availability, and pricing model. The start declaration for Phase 2 (deadline 2 November 2026) requires identifying the provider. Has this been filed?</span><span class="el">Ποιον πάροχο έχει επιλέξει ή προεπιλέξει η AFS; Ολόκληρη η ενσωμάτωση myDATA και ηλ. τιμολόγησης εξαρτάται από τις προδιαγραφές API του παρόχου, τη μέθοδο αυθεντικοποίησης, τη διαθεσιμότητα sandbox και το μοντέλο τιμολόγησης. Η δήλωση έναρξης για τη Φάση 2 (προθεσμία 2 Νοεμβρίου 2026) απαιτεί τον προσδιορισμό του παρόχου. Έχει κατατεθεί;</span></div></details>
+  <details class="question-group" open><summary><span class="blocking-tag"><span class="en">Blocking</span><span class="el">Αναστολή</span></span> <span class="en">Chart of Accounts</span><span class="el">Λογιστικό Σχέδιο</span></summary><div class="q-body"><span class="en">Does AFS have a standard CoA template for all clients, or does each client maintain its own? Is the CoA based on ΕΓΛΣ (older) or ΕΛΠ (current)? We need the CoA-to-E3 mapping for at least one representative client to build and validate the E3 classification engine.</span><span class="el">Έχει η AFS τυπικό πρότυπο ΛΣ για όλους τους πελάτες ή κάθε πελάτης διατηρεί το δικό του; Το ΛΣ βασίζεται σε ΕΓΛΣ (παλαιότερο) ή ΕΛΠ (τρέχον); Χρειαζόμαστε την αντιστοίχιση ΛΣ-προς-E3 για τουλάχιστον έναν αντιπροσωπευτικό πελάτη για να χτίσουμε και να επικυρώσουμε τη μηχανή ταξινόμησης E3.</span></div></details>
+  <details class="question-group"><summary><span class="en">Client portfolio scope</span><span class="el">Πεδίο χαρτοφυλακίου πελατών</span></summary><div class="q-body"><span class="en">How many organizations in the first phase? Are all clients Greek-domiciled or are there cross-border operations?</span><span class="el">Πόσοι οργανισμοί στην πρώτη φάση; Είναι όλοι οι πελάτες εδρευόμενοι στην Ελλάδα ή υπάρχουν διασυνοριακές λειτουργίες;</span></div></details>
+  <details class="question-group"><summary><span class="en">Existing data &amp; migration</span><span class="el">Υφιστάμενα δεδομένα &amp; μεταφορά</span></summary><div class="q-body"><span class="en">Are clients migrating from Pylon or another ERP, or starting fresh? If migrating: opening balances, outstanding invoices, and fixed asset registers need import paths.</span><span class="el">Μεταφέρονται οι πελάτες από Pylon ή άλλο ERP, ή ξεκινούν εξαρχής; Εάν μεταφέρονται: υπόλοιπα έναρξης, εκκρεμή τιμολόγια και μητρώα παγίων χρειάζονται διαδρομές εισαγωγής.</span></div></details>
+  <details class="question-group"><summary><span class="en">Infrastructure &amp; environment</span><span class="el">Υποδομή &amp; περιβάλλον</span></summary><div class="q-body"><span class="en">Confirm the Zoho data center region (EU expected — crm.zoho.eu). Verify API rate limits support expected daily transaction volume.</span><span class="el">Επιβεβαίωση περιοχής κέντρου δεδομένων Zoho (αναμένεται EU — crm.zoho.eu). Επαλήθευση ότι τα όρια API υποστηρίζουν τον αναμενόμενο ημερήσιο όγκο συναλλαγών.</span></div></details>
 </section>
 
-<!-- ===== INVESTMENT & COST ESTIMATION ===== -->
+<!-- INVESTMENT -->
 <section id="investment">
-  <h2><span class="section-num">💰</span> Investment &amp; Cost Estimation</h2>
-  <p class="section-intro">Based on the scope analysis above, we estimate approximately <strong>400 hours</strong> of implementation work across all phases. Below is our proposed investment structure with a phased delivery approach.</p>
-
-  <div class="callout" style="border-left: 4px solid var(--accent); background: var(--accent-light); padding: 1.25rem 1.5rem; border-radius: var(--radius); margin-bottom: 1.5rem;">
-    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-      <strong style="color: var(--accent); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Total Project Investment</strong>
-    </div>
-    <div style="font-size: 2.2rem; font-weight: 800; color: var(--fg); font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -0.03em;">€11,000 – €13,000</div>
-    <p style="font-size: 0.82rem; color: var(--fg-secondary); margin-top: 0.35rem; margin-bottom: 0;">Covers all phases from foundation to optimization.</p>
+  <h2><span class="section-num">💰</span> <span class="en">Investment &amp; Cost Estimation</span><span class="el">Επένδυση &amp; Εκτίμηση Κόστους</span></h2>
+  <p class="section-intro"><span class="en">Based on the scope analysis above, we estimate approximately <strong>400 hours</strong> of implementation work across all phases.</span><span class="el">Με βάση την παραπάνω ανάλυση πεδίου εφαρμογής, εκτιμούμε περίπου <strong>400 ώρες</strong> εργασίας υλοποίησης σε όλες τις φάσεις.</span></p>
+  <div class="callout" style="border-left:4px solid var(--accent);background:var(--accent-light);padding:1.25rem 1.5rem;border-radius:var(--radius);margin-bottom:1.5rem;">
+    <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg><strong style="color:var(--accent);font-size:0.85rem;text-transform:uppercase;letter-spacing:0.05em;"><span class="en">Total Project Investment</span><span class="el">Συνολική Επένδυση Έργου</span></strong></div>
+    <div style="font-size:2.2rem;font-weight:800;color:var(--fg);font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:-0.03em;">€11,000 – €13,000</div>
+    <p style="font-size:0.82rem;color:var(--fg-secondary);margin-top:0.35rem;margin-bottom:0;"><span class="en">Covers all phases from foundation to optimization.</span><span class="el">Καλύπτει όλες τις φάσεις από τη βάση έως τη βελτιστοποίηση.</span></p>
   </div>
-
-  <div class="callout" style="border-left: 4px solid #10b981; background: rgba(16, 185, 129, 0.06); padding: 1rem 1.5rem; border-radius: var(--radius); margin-bottom: 2rem;">
-    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      <strong style="color: #10b981; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Goodwill Discount</strong>
-    </div>
-    <p style="font-size: 0.85rem; color: var(--fg-secondary); margin: 0;">A discount of approximately <strong>€2,000</strong> will be applied to this budget in recognition of certain services from our previous contract that were not fully delivered.</p>
+  <div class="callout" style="border-left:4px solid #10b981;background:rgba(16,185,129,0.06);padding:1rem 1.5rem;border-radius:var(--radius);margin-bottom:2rem;">
+    <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.35rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><strong style="color:#10b981;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.05em;"><span class="en">Goodwill Discount</span><span class="el">Έκπτωση Καλής Θέλησης</span></strong></div>
+    <p style="font-size:0.85rem;color:var(--fg-secondary);margin:0;"><span class="en">A discount of approximately <strong>€2,000</strong> will be applied to this budget in recognition of certain services from our previous contract that were not fully delivered.</span><span class="el">Μια έκπτωση περίπου <strong>€2.000</strong> θα εφαρμοστεί σε αυτόν τον προϋπολογισμό σε αναγνώριση ορισμένων υπηρεσιών από την προηγούμενη σύμβασή μας που δεν παραδόθηκαν πλήρως.</span></p>
   </div>
-
-  <h3 style="font-size: 1rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; color: var(--fg);">Phased Delivery Option</h3>
-  <p style="font-size: 0.85rem; color: var(--fg-secondary); margin-bottom: 1.25rem;">We recommend splitting the project into phases, prioritizing the most critical compliance and operational tasks first. This allows AFS to begin realizing value immediately while spreading the investment over time.</p>
-
-  <table class="req-table">
-    <thead>
-      <tr><th>Phase</th><th>Focus Area</th><th>Investment</th><th>Timeline</th></tr>
-    </thead>
+  <h3 style="font-size:1rem;font-weight:700;margin-top:2rem;margin-bottom:1rem;color:var(--fg);"><span class="en">Phased Delivery Option</span><span class="el">Επιλογή Σταδιακής Παράδοσης</span></h3>
+  <table class="req-table"><thead><tr><th><span class="en">Phase</span><span class="el">Φάση</span></th><th><span class="en">Focus Area</span><span class="el">Πεδίο Εστίασης</span></th><th><span class="en">Investment</span><span class="el">Επένδυση</span></th><th><span class="en">Timeline</span><span class="el">Χρονοδιάγραμμα</span></th></tr></thead>
     <tbody>
-      <tr>
-        <td><span class="badge badge-yes">Phase 0</span></td>
-        <td><strong>Foundation &amp; Setup</strong> — Zoho Books configuration, Chart of Accounts, initial multi-company setup, bank account connections</td>
-        <td style="white-space:nowrap; font-weight:700;">€1,500</td>
-        <td>Weeks 1–2</td>
-      </tr>
-      <tr>
-        <td><span class="badge badge-yes">Phase 1</span></td>
-        <td><strong>Core Compliance</strong> — Greek Accounting Layer (E3 classification engine, myDATA transmission, MARK/UID retrieval), e-invoicing, VAT automation</td>
-        <td style="white-space:nowrap; font-weight:700;">€4,000</td>
-        <td>Weeks 3–8</td>
-      </tr>
-      <tr>
-        <td><span class="badge badge-partial">Phase 2</span></td>
-        <td><strong>Operational Integration</strong> — CRM Logistirio sync, expense management, payment workflows, supplier/customer portals, banking reconciliation</td>
-        <td style="white-space:nowrap; font-weight:700;">€3,500</td>
-        <td>Weeks 9–14</td>
-      </tr>
-      <tr>
-        <td><span class="badge badge-partial">Phase 3</span></td>
-        <td><strong>Reporting &amp; Analytics</strong> — Custom dashboards, financial reporting, myDATA reconciliation reports, tax declaration data preparation</td>
-        <td style="white-space:nowrap; font-weight:700;">€2,500</td>
-        <td>Weeks 15–18</td>
-      </tr>
-      <tr>
-        <td><span class="badge badge-no">Phase 4</span></td>
-        <td><strong>Optimization &amp; Training</strong> — Advanced automation, user training, documentation, workflow refinement, go-live support</td>
-        <td style="white-space:nowrap; font-weight:700;">€1,500</td>
-        <td>Weeks 19–22</td>
-      </tr>
+      <tr><td><span class="badge badge-yes"><span class="en">Phase 0</span><span class="el">Φάση 0</span></span></td><td><strong><span class="en">Foundation &amp; Setup</span><span class="el">Βάση &amp; Εγκατάσταση</span></strong> — <span class="en">Zoho Books configuration, Chart of Accounts, initial multi-company setup</span><span class="el">Παραμετροποίηση Zoho Books, Λογιστικό Σχέδιο, αρχική πολυεταιρική ρύθμιση</span></td><td style="white-space:nowrap;font-weight:700;">€1,500</td><td><span class="en">Weeks 1–2</span><span class="el">Εβδομάδες 1–2</span></td></tr>
+      <tr><td><span class="badge badge-yes"><span class="en">Phase 1</span><span class="el">Φάση 1</span></span></td><td><strong><span class="en">Core Compliance</span><span class="el">Βασική Συμμόρφωση</span></strong> — <span class="en">Greek Accounting Layer (E3 engine, myDATA transmission, MARK/UID), e-invoicing, VAT automation</span><span class="el">Ελληνικό Λογιστικό Επίπεδο (μηχανή E3, μετάδοση myDATA, MARK/UID), ηλ. τιμολόγηση, αυτοματισμός ΦΠΑ</span></td><td style="white-space:nowrap;font-weight:700;">€4,000</td><td><span class="en">Weeks 3–8</span><span class="el">Εβδομάδες 3–8</span></td></tr>
+      <tr><td><span class="badge badge-partial"><span class="en">Phase 2</span><span class="el">Φάση 2</span></span></td><td><strong><span class="en">Operational Integration</span><span class="el">Λειτουργική Ενσωμάτωση</span></strong> — <span class="en">CRM Logistirio sync, expense management, payment workflows, banking reconciliation</span><span class="el">Συγχρονισμός CRM Logistirio, διαχείριση εξόδων, ροές πληρωμών, τραπεζική συμφωνία</span></td><td style="white-space:nowrap;font-weight:700;">€3,500</td><td><span class="en">Weeks 9–14</span><span class="el">Εβδομάδες 9–14</span></td></tr>
+      <tr><td><span class="badge badge-partial"><span class="en">Phase 3</span><span class="el">Φάση 3</span></span></td><td><strong><span class="en">Reporting &amp; Analytics</span><span class="el">Αναφορές &amp; Αναλύσεις</span></strong> — <span class="en">Custom dashboards, financial reporting, myDATA reconciliation, tax declaration data</span><span class="el">Προσαρμοσμένοι πίνακες ελέγχου, οικονομικές αναφορές, συμφωνία myDATA, δεδομένα φορολογικών δηλώσεων</span></td><td style="white-space:nowrap;font-weight:700;">€2,500</td><td><span class="en">Weeks 15–18</span><span class="el">Εβδομάδες 15–18</span></td></tr>
+      <tr><td><span class="badge badge-no"><span class="en">Phase 4</span><span class="el">Φάση 4</span></span></td><td><strong><span class="en">Optimization &amp; Training</span><span class="el">Βελτιστοποίηση &amp; Εκπαίδευση</span></strong> — <span class="en">Advanced automation, user training, documentation, go-live support</span><span class="el">Προηγμένοι αυτοματισμοί, εκπαίδευση χρηστών, τεκμηρίωση, υποστήριξη παραγωγικής λειτουργίας</span></td><td style="white-space:nowrap;font-weight:700;">€1,500</td><td><span class="en">Weeks 19–22</span><span class="el">Εβδομάδες 19–22</span></td></tr>
     </tbody>
   </table>
-
-  <div class="callout" style="border-left: 4px solid var(--fg-muted); background: var(--bg-card); padding: 1rem 1.5rem; border-radius: var(--radius); margin-top: 1.5rem;">
-    <p style="font-size: 0.82rem; color: var(--fg-secondary); margin: 0;"><strong>Note:</strong> Phases can be executed sequentially or adjusted based on AFS priorities. The most business-critical tasks (compliance with myDATA Phase 2 deadline of 2 November 2026) are concentrated in Phases 0 and 1, ensuring regulatory compliance is achieved first. Each phase includes its own review cycle and sign-off before proceeding.</p>
-  </div>
+  <div class="callout" style="border-left:4px solid var(--fg-muted);padding:1rem 1.5rem;border-radius:var(--radius);margin-top:1.5rem;"><p style="font-size:0.82rem;color:var(--fg-secondary);margin:0;"><span class="en"><strong>Note:</strong> Phases can be executed sequentially or adjusted based on AFS priorities. The most business-critical tasks (compliance with myDATA Phase 2 deadline of 2 November 2026) are concentrated in Phases 0 and 1.</span><span class="el"><strong>Σημείωση:</strong> Οι φάσεις μπορούν να εκτελεστούν διαδοχικά ή να προσαρμοστούν βάσει προτεραιοτήτων AFS. Οι πιο κρίσιμες εργασίες (συμμόρφωση με την προθεσμία Φάσης 2 myDATA της 2 Νοεμβρίου 2026) συγκεντρώνονται στις Φάσεις 0 και 1.</span></p></div>
 </section>
 
-<!-- ===== PART 2 HEADER ===== -->
-<div style="margin: 3.5rem 0 2.5rem; padding: 1.5rem; background: linear-gradient(135deg, var(--accent-light) 0%, var(--bg) 100%); border-radius: var(--radius); border: 1px solid var(--border);">
-  <p style="font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--accent); margin-bottom:0.5rem;">Part 2</p>
-  <h2 style="font-family:'Plus Jakarta Sans',sans-serif; font-size:1.4rem; font-weight:700; letter-spacing:-0.02em; border:none; padding:0; margin:0;">Comparative Analysis</h2>
-  <p style="color:var(--fg-secondary); font-size:0.88rem; margin-top:0.35rem;">Zoho Books + CRM + myDATA vs. Full Custom Creator App</p>
+<!-- PART 2 HEADER -->
+<div style="margin:3.5rem 0 2.5rem;padding:1.5rem;background:linear-gradient(135deg,var(--accent-light) 0%,var(--bg) 100%);border-radius:var(--radius);border:1px solid var(--border);">
+  <p style="font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:0.5rem;"><span class="en">Part 2</span><span class="el">Μέρος 2</span></p>
+  <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.4rem;font-weight:700;letter-spacing:-0.02em;border:none;padding:0;margin:0;"><span class="en">Comparative Analysis</span><span class="el">Συγκριτική Ανάλυση</span></h2>
+  <p style="color:var(--fg-secondary);font-size:0.88rem;margin-top:0.35rem;"><span class="en">Zoho Books + CRM + myDATA vs. Full Custom Creator App</span><span class="el">Zoho Books + CRM + myDATA vs. Πλήρης Προσαρμοσμένη Εφαρμογή Creator</span></p>
 </div>
 
-<!-- ===== SECTION 11: COMPARISON ===== -->
+<!-- SECTION 11 -->
 <section id="comparison">
-  <h2><span class="section-num">11</span> Side-by-Side Comparison</h2>
-  <p class="section-intro"><strong>Option A:</strong> Zoho Books as the accounting engine, enhanced with a Creator-based Greek Accounting Layer for E3, myDATA, and e-invoicing. CRM Logistirio handles operational tracking. Analytics provides reporting.<br><strong>Option B:</strong> A purpose-built accounting application in Creator handling everything natively.</p>
-
-  <div class="comparison-wrap">
-    <table class="comparison-table">
-      <thead>
-        <tr>
-          <th>Dimension</th>
-          <th class="opt-a">Option A: Books + Creator Layer</th>
-          <th class="opt-b">Option B: Full Custom Creator</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>Double-entry accounting</strong></td><td>Built-in, mature, audited. Books handles journals, ledgers, trial balance, P&amp;L natively. Zero development.</td><td>Must be built from scratch. Every posting, balance calculation, period closing is custom Deluge. 3–4 months of core development alone.</td></tr>
-        <tr><td><strong>Bank reconciliation</strong></td><td>Native bank feeds (OFX/CSV import), automatic matching, reconciliation UI included.</td><td>Must build import parsers, matching algorithms, and reconciliation UI. No native bank feed integration in Creator.</td></tr>
-        <tr><td><strong>Invoicing</strong></td><td>Full lifecycle (draft → sent → paid → void), recurring invoices, credit notes, customer portals — all native.</td><td>Every document type, status transition, numbering sequence, email template must be built.</td></tr>
-        <tr><td><strong>Multi-currency</strong></td><td>Native with automatic exchange rate updates.</td><td>Must build currency tables, exchange rate fetching, gain/loss calculations, revaluation routines.</td></tr>
-        <tr><td><strong>Tax handling</strong></td><td>Configurable tax rates and groups. Tax reports (not Greek-specific).</td><td>Full control but every calculation, validation, and report must be coded.</td></tr>
-        <tr><td><strong>Greek compliance</strong></td><td>Built as a Creator overlay. Adds E3, provider API, MARK/UID, reconciliation. Books unmodified.</td><td>Natively integrated — E3, myDATA, e-invoicing are first-class. No overlay needed.</td></tr>
-        <tr><td><strong>Chart of Accounts</strong></td><td>Manual setup (no pre-installed Greek CoA). One-time config per client.</td><td>Full control — can pre-install ΕΓΛΣ/ΕΛΠ templates, enforce account structures, validate postings.</td></tr>
-        <tr><td><strong>IASIS integration</strong></td><td>Logistirio CRM module and Creator clone remain as-is. Greek Layer is a new Creator app communicating with both.</td><td>Custom app subsumes some Logistirio functions. Risk of duplication. Migration path unclear.</td></tr>
-        <tr><td><strong>User experience</strong></td><td>Accountants work in Books (familiar, polished). Operational staff in CRM. Compliance invisible.</td><td>Single application but UI built from scratch. Creator's form-based UI not designed for high-volume accounting.</td></tr>
-        <tr><td><strong>Reporting</strong></td><td>Books: 50+ standard financial reports. Analytics: cross-system dashboards. Greek reports from Creator layer.</td><td>All reports must be built. Creator reports adequate for operational data but lack financial report formatting.</td></tr>
-        <tr><td><strong>Audit trail</strong></td><td>Books: native, immutable, SOC 2 compliant.</td><td>Must build audit logging for every operation. Proving immutability to auditors requires additional design.</td></tr>
-        <tr><td><strong>Maintenance</strong></td><td>Books maintained by Zoho (updates, security, features). Creator layer maintained by implementation team — well-scoped codebase.</td><td>Entire system maintained by implementation team. Every Zoho API change, regulatory update, bug fix is custom work.</td></tr>
-        <tr><td><strong>Development effort</strong></td><td>~400 hours for Greek Accounting Layer. Books requires zero development.</td><td>~1,500–2,000+ hours minimum. Core accounting alone (engine, CoA, reports) = 3–4 months before any compliance work begins.</td></tr>
-        <tr><td><strong>Risk</strong></td><td>Low–medium. Books is proven. Creator layer scoped and testable. Main risk: Books limitations requiring workarounds.</td><td>High. Multi-year commitment. Risk of bugs in financial calculations, incomplete audit trails, regulatory non-compliance during build.</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="callout callout-success">
-    <strong>Where Option A wins:</strong>
-    <ul style="margin: 0.5rem 0 0; padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.7;">
-      <li><strong>Time-to-compliance:</strong> Leverages a certified accounting engine rather than building one from scratch.</li>
-      <li><strong>Foundation reuse:</strong> Builds on the existing CRM Logistirio module and Creator sync infrastructure already in production for IASIS.</li>
-      <li><strong>Maintenance scope:</strong> Core accounting updates (VAT rates, regulatory changes) are handled by Zoho; only the Greek layer needs custom maintenance.</li>
-      <li><strong>Existing infrastructure:</strong> The bidirectional CRM ↔ Creator sync, external partner upload flows, and pharmaceutical tracking modules remain untouched.</li>
-      <li><strong>Onboarding simplicity:</strong> Standard Zoho Books interface for day-to-day bookkeeping; custom components only for Greece-specific workflows.</li>
-      <li><strong>Ecosystem integration:</strong> Native connections to Zoho Analytics, Zoho Expense, Zoho Inventory, and 50+ other Zoho apps without custom API work.</li>
-    </ul>
-  </div>
-
-  <div class="callout callout-info">
-    <strong>Where Option B makes sense:</strong> A full custom Creator app is the right choice when the client's accounting requirements are so specialized that Books cannot accommodate them (e.g., fund accounting for complex financial instruments), the client will never use Books' standard features, or the client needs absolute control over every UI element and has the engineering team to maintain it indefinitely.
-  </div>
+  <h2><span class="section-num">11</span> <span class="en">Side-by-Side Comparison</span><span class="el">Σύγκριση Δίπλα-Δίπλα</span></h2>
+  <div class="comparison-wrap"><table class="comparison-table">
+    <thead><tr><th><span class="en">Dimension</span><span class="el">Διάσταση</span></th><th class="opt-a"><span class="en">Option A: Books + Creator Layer</span><span class="el">Επιλογή Α: Books + Επίπεδο Creator</span></th><th class="opt-b"><span class="en">Option B: Full Custom Creator</span><span class="el">Επιλογή Β: Πλήρης Προσαρμοσμένο Creator</span></th></tr></thead>
+    <tbody>
+      <tr><td><strong><span class="en">Double-entry accounting</span><span class="el">Λογιστική διπλογραφίας</span></strong></td><td><span class="en">Built-in, mature, audited. Books handles journals, ledgers, trial balance natively. Zero development.</span><span class="el">Ενσωματωμένη, ώριμη, ελεγμένη. Το Books χειρίζεται ημερολόγια, καθολικά, ισοζύγιο εγγενώς. Μηδενική ανάπτυξη.</span></td><td><span class="en">Must be built from scratch. Every posting, balance calculation, period closing is custom Deluge. 3–4 months alone.</span><span class="el">Πρέπει να χτιστεί από την αρχή. Κάθε καταχώρηση, υπολογισμός υπολοίπων, κλείσιμο περιόδου είναι custom Deluge. 3–4 μήνες μόνο.</span></td></tr>
+      <tr><td><strong><span class="en">Bank reconciliation</span><span class="el">Τραπεζική συμφωνία</span></strong></td><td><span class="en">Native bank feeds (OFX/CSV import), automatic matching, reconciliation UI included.</span><span class="el">Εγγενείς τραπεζικές ροές (εισαγωγή OFX/CSV), αυτόματη αντιστοίχιση, UI συμφωνίας περιλαμβάνεται.</span></td><td><span class="en">Must build import parsers, matching algorithms, and reconciliation UI.</span><span class="el">Πρέπει να χτιστούν parsers εισαγωγής, αλγόριθμοι αντιστοίχισης και UI συμφωνίας.</span></td></tr>
+      <tr><td><strong><span class="en">Greek compliance</span><span class="el">Ελληνική συμμόρφωση</span></strong></td><td><span class="en">Built as a Creator overlay. Adds E3, provider API, MARK/UID, reconciliation. Books unmodified.</span><span class="el">Χτισμένη ως επίπεδο Creator. Προσθέτει E3, API παρόχου, MARK/UID, συμφωνία. Το Books ανέπαφο.</span></td><td><span class="en">Natively integrated — E3, myDATA, e-invoicing are first-class. No overlay needed.</span><span class="el">Εγγενώς ενσωματωμένη — E3, myDATA, ηλ. τιμολόγηση είναι πρωτεύοντα. Δεν χρειάζεται επίπεδο.</span></td></tr>
+      <tr><td><strong><span class="en">User experience</span><span class="el">Εμπειρία χρήστη</span></strong></td><td><span class="en">Accountants work in Books (familiar, polished). Operational staff in CRM. Compliance invisible.</span><span class="el">Οι λογιστές εργάζονται σε Books (οικείο, εκλεπτυσμένο). Λειτουργικό προσωπικό σε CRM. Η συμμόρφωση αόρατη.</span></td><td><span class="en">Single application but UI built from scratch. Creator's form-based UI not designed for high-volume accounting.</span><span class="el">Ενιαία εφαρμογή αλλά UI χτισμένο από την αρχή. Το UI του Creator δεν είναι σχεδιασμένο για λογιστική μεγάλου όγκου.</span></td></tr>
+      <tr><td><strong><span class="en">Audit trail</span><span class="el">Ίχνος ελέγχου</span></strong></td><td><span class="en">Books: native, immutable, SOC 2 compliant.</span><span class="el">Books: εγγενές, αμετάβλητο, συμβατό με SOC 2.</span></td><td><span class="en">Must build audit logging for every operation. Proving immutability requires additional design.</span><span class="el">Πρέπει να χτιστεί καταγραφή ελέγχου για κάθε λειτουργία. Η απόδειξη αμεταβλητότητας απαιτεί πρόσθετο σχεδιασμό.</span></td></tr>
+      <tr><td><strong><span class="en">Development effort</span><span class="el">Προσπάθεια ανάπτυξης</span></strong></td><td><span class="en">~400 hours for Greek Accounting Layer. Books requires zero development.</span><span class="el">~400 ώρες για το Ελληνικό Λογιστικό Επίπεδο. Το Books δεν απαιτεί ανάπτυξη.</span></td><td><span class="en">~1,500–2,000+ hours minimum. Core accounting alone = 3–4 months before any compliance work.</span><span class="el">~1.500–2.000+ ώρες ελάχιστο. Η βασική λογιστική μόνη = 3–4 μήνες πριν οποιαδήποτε εργασία συμμόρφωσης.</span></td></tr>
+      <tr><td><strong><span class="en">Risk</span><span class="el">Κίνδυνος</span></strong></td><td><span class="en">Low–medium. Books is proven. Creator layer scoped and testable.</span><span class="el">Χαμηλός–μέτριος. Το Books είναι αποδεδειγμένο. Το επίπεδο Creator οριοθετημένο και ελέγξιμο.</span></td><td><span class="en">High. Multi-year commitment. Risk of bugs in financial calculations, incomplete audit trails.</span><span class="el">Υψηλός. Πολυετής δέσμευση. Κίνδυνος σφαλμάτων σε οικονομικούς υπολογισμούς, ελλιπή ίχνη ελέγχου.</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout callout-success"><span class="en"><strong>Where Option A wins:</strong> Time-to-compliance, foundation reuse (existing CRM Logistirio), maintenance scope (core updates by Zoho), ecosystem integration (50+ Zoho apps), and onboarding simplicity.</span><span class="el"><strong>Πού υπερέχει η Επιλογή Α:</strong> Χρόνος μέχρι συμμόρφωση, επαναχρησιμοποίηση βάσης (υφιστάμενο CRM Logistirio), εύρος συντήρησης (ενημερώσεις πυρήνα από τη Zoho), ενσωμάτωση οικοσυστήματος (50+ εφαρμογές Zoho) και απλότητα ενσωμάτωσης.</span></div>
+  <div class="callout callout-info"><span class="en"><strong>Where Option B makes sense:</strong> A full custom Creator app is the right choice when accounting requirements are so specialized that Books cannot accommodate them, the client will never use Books' standard features, or the client needs absolute control over every UI element and has the engineering team to maintain it indefinitely.</span><span class="el"><strong>Πού βγάζει νόημα η Επιλογή Β:</strong> Μια πλήρης προσαρμοσμένη εφαρμογή Creator είναι η σωστή επιλογή όταν οι λογιστικές απαιτήσεις είναι τόσο εξειδικευμένες που το Books δεν μπορεί να τις καλύψει, ο πελάτης δεν θα χρησιμοποιήσει ποτέ τα τυπικά χαρακτηριστικά του Books, ή χρειάζεται απόλυτο έλεγχο κάθε στοιχείου UI και διαθέτει ομάδα για αόριστη συντήρηση.</span></div>
 </section>
 
-<!-- ===== SECTION 12: RECOMMENDATION ===== -->
+<!-- SECTION 12 -->
 <section id="recommendation">
-  <h2><span class="section-num">12</span> Recommendation &amp; Next Steps</h2>
-
-  <div class="callout callout-success" style="font-size:0.95rem;">
-    <strong>Option A (Zoho Books + Creator Greek Accounting Layer)</strong> is the recommended architecture. It delivers full Greek accounting compliance within the Zoho ecosystem, meets the AFS scope requirements, respects the Phase 2 timeline, and builds on the existing IASIS infrastructure.<br><br>
-    The Greek Accounting Layer in Creator is not a workaround — it is the correct architectural pattern: let the best-in-class tool handle what it does well, and build the localization and compliance logic as a modular, maintainable, reusable layer alongside it.
-  </div>
-
-  <h3 style="font-family:'Plus Jakarta Sans',sans-serif; font-size:1.05rem; font-weight:700; margin: 2rem 0 1rem;">Proposed Delivery Timeline</h3>
-
+  <h2><span class="section-num">12</span> <span class="en">Recommendation &amp; Next Steps</span><span class="el">Σύσταση &amp; Επόμενα Βήματα</span></h2>
+  <div class="callout callout-success" style="font-size:0.95rem;"><span class="en"><strong>Option A (Zoho Books + Creator Greek Accounting Layer)</strong> is the recommended architecture. It delivers full Greek accounting compliance within the Zoho ecosystem, meets the AFS scope requirements, respects the Phase 2 timeline, and builds on the existing IASIS infrastructure.<br><br>The Greek Accounting Layer in Creator is not a workaround — it is the correct architectural pattern: let the best-in-class tool handle what it does well, and build the localization and compliance logic as a modular, maintainable, reusable layer alongside it.</span><span class="el"><strong>Η Επιλογή Α (Zoho Books + Ελληνικό Λογιστικό Επίπεδο Creator)</strong> είναι η προτεινόμενη αρχιτεκτονική. Παρέχει πλήρη ελληνική λογιστική συμμόρφωση εντός του οικοσυστήματος Zoho, ικανοποιεί τις απαιτήσεις πεδίου AFS, τηρεί το χρονοδιάγραμμα Φάσης 2 και χτίζει πάνω στην υφιστάμενη υποδομή IASIS.<br><br>Το Ελληνικό Λογιστικό Επίπεδο σε Creator δεν είναι λύση ανάγκης — είναι το σωστό αρχιτεκτονικό μοτίβο: αφήστε το κορυφαίο εργαλείο να χειριστεί αυτό που κάνει καλά, και χτίστε τη λογική τοπικής προσαρμογής και συμμόρφωσης ως αρθρωτό, συντηρήσιμο, επαναχρησιμοποιήσιμο επίπεδο δίπλα του.</span></div>
+  <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;font-weight:700;margin:2rem 0 1rem;"><span class="en">Proposed Delivery Timeline</span><span class="el">Προτεινόμενο Χρονοδιάγραμμα Παράδοσης</span></h3>
   <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-dot">0</div>
-      <div class="timeline-content">
-        <h4>Discovery &amp; Setup</h4>
-        <div class="duration">2 weeks</div>
-        <p>Provider selection finalized, sandbox access obtained, CoA template agreed, E3 mapping for pilot client completed, Zoho Books organizations provisioned.</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot">1</div>
-      <div class="timeline-content">
-        <h4>Core Greek Layer</h4>
-        <div class="duration">4 weeks</div>
-        <p>E3 classification engine, CoA-to-E3 mapping module, Books webhook integration, basic myDATA transmission via provider API, MARK/UID storage and display.</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot">2</div>
-      <div class="timeline-content">
-        <h4>E-invoicing &amp; Compliance</h4>
-        <div class="duration">3 weeks</div>
-        <p>Full e-invoicing flow (Books → Creator → Provider → AADE), income/expense classification automation, withholding tax handling, credit note and cancellation flows.</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot">3</div>
-      <div class="timeline-content">
-        <h4>Reporting &amp; Reconciliation</h4>
-        <div class="duration">2 weeks</div>
-        <p>myDATA reconciliation dashboard (Analytics), E3 summary reports, transmission log and error management, MYF pre-population support.</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot">4</div>
-      <div class="timeline-content">
-        <h4>Multi-client &amp; Practice</h4>
-        <div class="duration">1 week</div>
-        <p>Client configuration templates, AFS admin views, Zoho Practice integration, onboarding runbook. Production-ready system for pilot client.</p>
-      </div>
-    </div>
+    <div class="timeline-item"><div class="timeline-dot">0</div><div class="timeline-content"><h4><span class="en">Discovery &amp; Setup</span><span class="el">Ανακάλυψη &amp; Εγκατάσταση</span></h4><div class="duration"><span class="en">2 weeks</span><span class="el">2 εβδομάδες</span></div><p><span class="en">Provider selection finalized, sandbox access, CoA template agreed, E3 mapping for pilot client, Zoho Books organizations provisioned.</span><span class="el">Οριστικοποίηση επιλογής παρόχου, πρόσβαση sandbox, συμφωνία ΛΣ, αντιστοίχιση E3 για πιλοτικό πελάτη, παροχή οργανισμών Books.</span></p></div></div>
+    <div class="timeline-item"><div class="timeline-dot">1</div><div class="timeline-content"><h4><span class="en">Core Greek Layer</span><span class="el">Πυρήνας Ελληνικού Επιπέδου</span></h4><div class="duration"><span class="en">4 weeks</span><span class="el">4 εβδομάδες</span></div><p><span class="en">E3 classification engine, CoA-to-E3 mapping, Books webhook integration, myDATA transmission via provider API, MARK/UID storage.</span><span class="el">Μηχανή ταξινόμησης E3, αντιστοίχιση ΛΣ-σε-E3, ενσωμάτωση webhook Books, μετάδοση myDATA μέσω API παρόχου, αποθήκευση MARK/UID.</span></p></div></div>
+    <div class="timeline-item"><div class="timeline-dot">2</div><div class="timeline-content"><h4><span class="en">E-invoicing &amp; Compliance</span><span class="el">Ηλ. Τιμολόγηση &amp; Συμμόρφωση</span></h4><div class="duration"><span class="en">3 weeks</span><span class="el">3 εβδομάδες</span></div><p><span class="en">Full e-invoicing flow (Books → Creator → Provider → AADE), income/expense classification, withholding tax, credit notes.</span><span class="el">Πλήρης ροή ηλ. τιμολόγησης (Books → Creator → Πάροχος → ΑΑΔΕ), ταξινόμηση εσόδων/εξόδων, παρακράτηση φόρου, πιστωτικά σημειώματα.</span></p></div></div>
+    <div class="timeline-item"><div class="timeline-dot">3</div><div class="timeline-content"><h4><span class="en">Reporting &amp; Reconciliation</span><span class="el">Αναφορές &amp; Συμφωνία</span></h4><div class="duration"><span class="en">2 weeks</span><span class="el">2 εβδομάδες</span></div><p><span class="en">myDATA reconciliation dashboard (Analytics), E3 summary reports, transmission log and error management.</span><span class="el">Πίνακας ελέγχου συμφωνίας myDATA (Analytics), συνοπτικές αναφορές E3, αρχείο μεταδόσεων και διαχείριση σφαλμάτων.</span></p></div></div>
+    <div class="timeline-item"><div class="timeline-dot">4</div><div class="timeline-content"><h4><span class="en">Multi-client &amp; Practice</span><span class="el">Πολλαπλοί Πελάτες &amp; Practice</span></h4><div class="duration"><span class="en">1 week</span><span class="el">1 εβδομάδα</span></div><p><span class="en">Client configuration templates, AFS admin views, Zoho Practice integration, onboarding runbook.</span><span class="el">Πρότυπα παραμετροποίησης πελατών, προβολές διαχειριστή AFS, ενσωμάτωση Zoho Practice, εγχειρίδιο ενσωμάτωσης.</span></p></div></div>
   </div>
-
-  <h3 style="font-family:'Plus Jakarta Sans',sans-serif; font-size:1.05rem; font-weight:700; margin: 2rem 0 1rem;">Immediate Next Steps</h3>
+  <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;font-weight:700;margin:2rem 0 1rem;"><span class="en">Immediate Next Steps</span><span class="el">Άμεσα Επόμενα Βήματα</span></h3>
   <ol class="next-steps">
-    <li><div><strong>Evaluate and select the e-invoicing provider.</strong> This is the critical path item. Without it, Phase 1 cannot begin API integration work.</div></li>
-    <li><div><strong>File the start declaration with AADE</strong> before 2 November 2026 if not already done.</div></li>
-    <li><div><strong>Select a pilot client</strong> (IASIS recommended, given existing infrastructure) for development and testing.</div></li>
-    <li><div><strong>Conduct a CoA mapping workshop</strong> between AFS accountants and the implementation team to map the pilot client's Chart of Accounts to E3 categories.</div></li>
-    <li><div><strong>Provision the pilot Books organization,</strong> import CoA, configure tax rates and payment terms.</div></li>
-    <li><div><strong>Begin Phase 1</strong> of the Creator Greek Accounting Layer.</div></li>
+    <li><div><span class="en"><strong>Evaluate and select the e-invoicing provider.</strong> This is the critical path item. Without it, Phase 1 cannot begin.</span><span class="el"><strong>Αξιολόγηση και επιλογή παρόχου ηλ. τιμολόγησης.</strong> Αυτό είναι το στοιχείο κρίσιμης διαδρομής. Χωρίς αυτό, η Φάση 1 δεν μπορεί να ξεκινήσει.</span></div></li>
+    <li><div><span class="en"><strong>File the start declaration with AADE</strong> before 2 November 2026 if not already done.</span><span class="el"><strong>Κατάθεση δήλωσης έναρξης στην ΑΑΔΕ</strong> πριν τις 2 Νοεμβρίου 2026 εάν δεν έχει ήδη γίνει.</span></div></li>
+    <li><div><span class="en"><strong>Select a pilot client</strong> (IASIS recommended) for development and testing.</span><span class="el"><strong>Επιλογή πιλοτικού πελάτη</strong> (συνιστάται IASIS) για ανάπτυξη και δοκιμές.</span></div></li>
+    <li><div><span class="en"><strong>Conduct a CoA mapping workshop</strong> to map the pilot client's Chart of Accounts to E3 categories.</span><span class="el"><strong>Διεξαγωγή εργαστηρίου αντιστοίχισης ΛΣ</strong> για αντιστοίχιση του Λογιστικού Σχεδίου πιλοτικού πελάτη σε κατηγορίες E3.</span></div></li>
+    <li><div><span class="en"><strong>Provision the pilot Books organization,</strong> import CoA, configure tax rates and payment terms.</span><span class="el"><strong>Παροχή του πιλοτικού οργανισμού Books,</strong> εισαγωγή ΛΣ, ρύθμιση φορολογικών συντελεστών και όρων πληρωμής.</span></div></li>
+    <li><div><span class="en"><strong>Begin Phase 1</strong> of the Creator Greek Accounting Layer.</span><span class="el"><strong>Έναρξη Φάσης 1</strong> του Ελληνικού Λογιστικού Επιπέδου Creator.</span></div></li>
   </ol>
 </section>
 
-</div><!-- /content-area -->
-
-<div class="page-footer">
-  AFS Technologies · Zoho Accounting Implementation Response · October 2026<br>
-  Prepared by Theodoros Kalfas, Zoho Implementation Partner
 </div>
 
-</div><!-- /main -->
+<div class="page-footer">
+  <span class="en">AFS Technologies · Zoho Accounting Implementation Response · October 2026<br>Prepared by Theodoros Kalfas, Zoho Implementation Partner</span>
+  <span class="el">AFS Technologies · Απόκριση Υλοποίησης Λογιστικής Zoho · Οκτώβριος 2026<br>Προετοιμασία: Θεόδωρος Καλφάς, Zoho Implementation Partner</span>
+</div>
+
+</div>
 
 <script>
-// Active nav highlighting on scroll
+function setLang(lang) {
+  document.body.dataset.lang = lang;
+  document.documentElement.lang = lang === 'el' ? 'el' : 'en';
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-el').classList.toggle('active', lang === 'el');
+}
+
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.sidebar a[href^="#"]');
 const observer = new IntersectionObserver(entries => {
@@ -1365,7 +651,6 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { rootMargin: '-20% 0px -75% 0px' });
 sections.forEach(s => observer.observe(s));
-// Also observe architecture section
 const archEl = document.getElementById('architecture');
 if (archEl) observer.observe(archEl);
 </script>
