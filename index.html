@@ -635,9 +635,30 @@ td:first-child { font-weight: 600; color: var(--fg); }
   color: var(--fg-muted);
 }
 
+/* ===== PDF BUTTON ===== */
+.pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+  padding: 0.6rem 1.25rem;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: var(--radius-sm);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+.pdf-btn:hover { background: rgba(255,255,255,0.25); }
+.pdf-btn svg { width: 16px; height: 16px; }
+
 /* ===== PRINT ===== */
 @media print {
-  .sidebar, .menu-toggle, .sidebar-overlay { display: none !important; }
+  .sidebar, .menu-toggle, .sidebar-overlay, .pdf-btn { display: none !important; }
   .main { margin-left: 0 !important; }
   .hero { padding: 2rem; }
   .content-area { padding: 1rem; }
@@ -706,6 +727,10 @@ td:first-child { font-weight: 600; color: var(--fg); }
         14–18 weeks delivery
       </div>
     </div>
+    <button class="pdf-btn" onclick="window.print()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download as PDF
+    </button>
   </div>
 </header>
 
