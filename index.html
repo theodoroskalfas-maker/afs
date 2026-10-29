@@ -323,13 +323,15 @@ body[data-lang="el"] .en { display: none !important; }
         <span class="en">14–18 weeks delivery</span><span class="el">Παράδοση 14–18 εβδομάδες</span>
       </div>
     </div>
-    <button class="pdf-btn" onclick="window.print()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      <span class="en">Download as PDF</span><span class="el">Λήψη ως PDF</span>
-    </button>
-    <div class="lang-toggle">
-      <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
-      <button class="lang-btn" onclick="setLang('el')" id="btn-el">GR</button>
+    <div style="display:flex; align-items:center; gap:0.75rem; margin-top:1.75rem; flex-wrap:wrap;">
+      <button class="pdf-btn" onclick="window.print()" style="margin-top:0;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span class="en">Download as PDF</span><span class="el">Λήψη ως PDF</span>
+      </button>
+      <div class="lang-toggle" style="margin-top:0; margin-left:0;">
+        <button class="lang-btn active" onclick="setLang('en')" id="btn-en">EN</button>
+        <button class="lang-btn" onclick="setLang('el')" id="btn-el">GR</button>
+      </div>
     </div>
   </div>
 </header>
